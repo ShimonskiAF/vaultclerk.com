@@ -1,0 +1,14 @@
+{
+  "name": "Vault Clerk",
+  "short_name": "Vault Clerk",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#121315",
+  "background_color": "#121315",
+  "display": "browser"
+}

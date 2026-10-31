@@ -1,0 +1,6 @@
+{
+  "name": "vaultclerk-com",
+  "private": true,
+  "description": "Vault Clerk landing page",
+  "engines": { "node": ">=20" }
+}

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /thanks
+
+Sitemap: https://vaultclerk.com/sitemap.xml
