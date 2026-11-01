@@ -25,7 +25,8 @@
 <meta property="og:image:alt" content="The Vault Clerk handwheel mark with the line: Your music business, filed.">
 <meta property="og:locale" content="en_AU">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@CravingSofaEnt">
+<meta name="twitter:site" content="@VaultClerkApp">
+<meta name="twitter:creator" content="@CravingSofaEnt">
 <meta name="twitter:title" content="Vault Clerk — your music business, filed">
 <meta name="twitter:description" content="A desktop app that files your music-business paperwork and answers briefs with filled paperwork. Everything stays on your computer. Coming soon.">
 <meta name="twitter:image" content="https://vaultclerk.com/og.png">
@@ -73,6 +74,7 @@
         "Marks projects LIVE or DARK from the paperwork in your vault; DARK projects share preview copies only",
         "Identity and tax drawer is walled off and never sent to any AI; any AI is optional and runs on your computer"
       ],
+      "sameAs": ["https://x.com/VaultClerkApp", "https://www.instagram.com/vaultclerk/"],
       "publisher": { "@id": "https://cravingsofa.com/#organization" }
     },
     {
@@ -187,6 +189,12 @@ details p{margin:0;padding:0 24px 22px;color:var(--muted)}
 footer{background:var(--bore);color:var(--chalk-muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:28px;padding-bottom:28px}
 footer a{color:var(--gold)}footer a:hover{color:var(--chalk)}
+footer .wrap{align-items:center}
+.social{display:flex;gap:8px;flex-wrap:wrap}
+.social a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:1px solid var(--steel-line);border-radius:22px;color:var(--chalk);text-decoration:none;font-size:14px}
+.social a:hover{border-color:var(--brass);color:var(--gold)}
+.social svg{width:16px;height:16px;fill:currentColor}
+.social svg[fill=none]{fill:none}
 @media (max-width:900px){
   .hero-grid{grid-template-columns:1fr;padding:32px 0 64px;gap:24px}
   .door{order:-1}.door svg{width:200px}
@@ -340,7 +348,7 @@ footer a{color:var(--gold)}footer a:hover{color:var(--chalk)}
       <details><summary>Can Vault Clerk send emails or share files for me?</summary><p>No. It builds the package or pitch room, and you send or upload it yourself. Pitch rooms are password-protected pages that expire on the date you set, uploaded to your own web host.</p></details>
       <details><summary>Which computers does Vault Clerk run on?</summary><p>macOS 10.15 or later on Apple Silicon and Intel Macs, and Windows 10 and 11 (64-bit).</p></details>
       <details><summary>How do I get Vault Clerk?</summary><p>Vault Clerk is in an early beta. <a href="#beta">Apply for the beta</a> and we invite people in small groups; the download link is emailed to invited testers only. Beta testers get a free licence at launch. The app will be licensed to you, for good, and prices haven't been set yet.</p></details>
-      <details><summary>Who makes Vault Clerk?</summary><p>Vault Clerk is made by <a href="https://cravingsofa.com/">Craving Sofa Entertainment</a>, the independent music house that also makes <a href="https://genrematch.app/">GenreMatch</a>.</p></details>
+      <details><summary>Who makes Vault Clerk?</summary><p>Vault Clerk is made by <a href="https://cravingsofa.com/">Craving Sofa Entertainment</a>, the independent music house that also makes <a href="https://genrematch.app/">GenreMatch</a>. Follow along on X at <a href="https://x.com/VaultClerkApp" target="_blank" rel="noopener">@VaultClerkApp</a> and Instagram at <a href="https://www.instagram.com/vaultclerk/" target="_blank" rel="noopener">@VaultClerk</a>.</p></details>
     </div>
   </section>
 
@@ -408,6 +416,10 @@ footer a{color:var(--gold)}footer a:hover{color:var(--chalk)}
 <footer>
   <div class="wrap">
     <span>&copy; 2026 <a href="https://cravingsofa.com/">Craving Sofa Entertainment</a> · Vault Clerk</span>
+    <nav class="social" aria-label="Vault Clerk on social media">
+      <a href="https://x.com/VaultClerkApp" target="_blank" rel="noopener me" aria-label="Vault Clerk on X (@VaultClerkApp)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>@VaultClerkApp</span></a>
+      <a href="https://www.instagram.com/vaultclerk/" target="_blank" rel="noopener me" aria-label="Vault Clerk on Instagram (@VaultClerk)"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg><span>@VaultClerk</span></a>
+    </nav>
     <span>No cookies, no tracking. <a href="/privacy">Privacy</a></span>
   </div>
 </footer>
