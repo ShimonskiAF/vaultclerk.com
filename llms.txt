@@ -21,7 +21,7 @@ Cloud sync or storage, hosted share links, team or shared vaults, a mobile app, 
 
 ## Facts
 
-- Platforms: macOS 10.15 or later (Apple Silicon and Intel), Windows 10 and 11 (64-bit).
+- Platforms: macOS 10.15 or later (Apple Silicon and Intel). Windows is in testing, not available yet.
 - Licence: licensed to you, for good. Prices not set yet. Beta testers get a free licence at launch.
 - Beta: apply at https://vaultclerk.com/#beta. Testers are invited in small groups and sent the download link by email. The app isn't signed by Apple or Microsoft yet.
 - Social: X https://x.com/VaultClerkApp (@VaultClerkApp), Instagram https://www.instagram.com/vaultclerk/ (@VaultClerk).
