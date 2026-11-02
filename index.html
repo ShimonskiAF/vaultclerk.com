@@ -332,7 +332,7 @@ footer .wrap{align-items:center}
 .social a:hover{border-color:var(--brass);color:var(--gold)}
 .social svg{width:16px;height:16px;fill:currentColor}
 .social svg[fill=none]{fill:none}
-@media (max-width:900px){
+@media (max-width:760px){
   .hero-grid{grid-template-columns:1fr;padding:32px 0 64px;gap:24px}
   .door{order:-1}.door svg{width:200px}
   .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -350,7 +350,7 @@ footer .wrap{align-items:center}
 .demo figcaption{padding:22px 24px 26px}
 .demo h3{font:600 26px/1.15 var(--title);margin:0 0 8px}
 .demo p{margin:0;color:var(--muted);font-size:15.5px}
-@media (max-width:900px){.demos{grid-template-columns:1fr}.demo.wide{display:flex}.demo.wide .screen{border-right:0;border-bottom:3px solid var(--brass)}}
+@media (max-width:760px){.demos{grid-template-columns:1fr}.demo.wide{display:flex}.demo.wide .screen{border-right:0;border-bottom:3px solid var(--brass)}}
 /* ===== Metal vault, glass windows (locked 3 Nov 2026) =====
    The page is the vault: bolted satin-steel plates on the gold-bar room.
    Cards are insets in the metal. Gold means value or action.
@@ -433,7 +433,7 @@ footer{background:rgba(18,19,21,.9);border-top:1px solid #3A3D41}
 footer a{color:var(--accent)}
 .social a{border-color:#4A4E54;background:linear-gradient(180deg,#2E3135 0%,#222428 100%)}
 
-@media (max-width:900px){.door .hero-wheel{width:170px}.hero{background:linear-gradient(180deg,rgba(20,19,15,.55),rgba(20,19,15,.82))}section>.wrap,.close>.wrap{padding:40px 24px 44px;width:calc(100% - 24px)}.top{border-radius:20px;top:8px}}
+@media (max-width:760px){.door .hero-wheel{width:170px}.hero{background:linear-gradient(180deg,rgba(20,19,15,.55),rgba(20,19,15,.82))}section>.wrap,.close>.wrap{padding:40px 24px 44px;width:calc(100% - 24px)}.top{border-radius:20px;top:8px}}
 @media (max-width:560px){.top nav a:not(:last-child){display:none}}
 
 /* How it works: one step at a time, its clip looping beside it */
@@ -455,7 +455,7 @@ html.scrolly .tstep.on{opacity:1;visibility:visible;transform:none;transition:op
 html.scrolly .tdots{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}
 .tdot{min-width:44px;height:32px;border-radius:6px;border:1px solid #4A4E54;background:linear-gradient(180deg,#2E3135,#222428);color:#B9B4A8;font:700 12px/1 var(--display);letter-spacing:.08em;cursor:pointer}
 .tdot.on{background:linear-gradient(180deg,#CDA96D,#A9844C);color:#1E1608;border-color:#A9844C;box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
-@media (max-width:900px){
+@media (max-width:760px){
   .tstep{grid-template-columns:1fr;gap:18px;padding:12px}
   .tcap{padding:4px 8px 10px}
   .tcap h3{font-size:30px}
@@ -477,6 +477,21 @@ html.scrolly .tdots{display:flex;gap:8px;justify-content:flex-end;margin-top:14p
 .field label span,.field legend span,.beta .fine{color:#CFC9BC}
 .box h3,.rule h3,summary{text-shadow:0 1px 0 rgba(0,0,0,.5)}
 .rule h3,summary::after{color:#F0D08F}
+
+/* iPad and small laptops: keep the desktop layout, just tighten it */
+@media (min-width:761px) and (max-width:1100px){
+  .top nav{gap:14px}.top nav a{font-size:13px}
+  .hero-grid{gap:28px;padding:48px 0 72px}
+  .door .hero-wheel{width:min(280px,32vw)}
+  section>.wrap,.close>.wrap{padding:44px 32px 48px;width:calc(100% - 32px)}
+  .boxes{gap:12px}.box{padding:20px}
+  .tstep{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:22px;padding:12px}
+  .tcap h3{font-size:32px}.tcap p{font-size:15.5px}
+  html.scrolly .stage{top:max(16px,calc(50vh - 260px))}
+}
+/* iPhone and iPad Safari ignore fixed backgrounds: pin the vault on its own layer */
+body{background:#14130F}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url(/vault-bg.svg) center top/cover no-repeat}
 </style>
 </head>
 <body>
