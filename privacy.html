@@ -10,19 +10,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#DFE1E0;color:#1E1C18;font:400 17px/1.65 Inter,system-ui,sans-serif}
-header{background:#121315;padding:24px}
-header a{color:#EFE9DC;text-decoration:none;font:600 15px/1 Cinzel,Georgia,serif;letter-spacing:.18em}
-main{max-width:720px;margin:0 auto;padding:56px 24px 80px}
+body{margin:0;background:#14130F url(/vault-bg.svg) center top/cover no-repeat fixed;color:#F4F1EA;font:400 17px/1.65 Inter,system-ui,sans-serif}
+header{padding:20px 24px}
+header a{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font:600 15px/1 Cinzel,Georgia,serif;letter-spacing:.18em}
+header a span{background:linear-gradient(180deg,#FFFFFF 0%,#E2DFD8 45%,#9C9993 55%,#CFCCC5 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 0 #000)}
+header svg{width:36px;height:36px}
+main{max-width:760px;margin:0 auto;padding:24px 24px 80px}
 h1{font:600 clamp(36px,5vw,48px)/1.1 "Cormorant Garamond",Georgia,serif;margin:0 0 20px}
 h2{font:600 26px/1.2 "Cormorant Garamond",Georgia,serif;margin:36px 0 8px}
-p,li{color:#3B3832}
-a{color:#7A5C2B}
-.card{background:#F6F7F5;border:1px solid #C5CBD1;border-radius:16px;padding:28px 32px}
+p,li{color:#D8D2C4}
+a{color:#E2C07F}
+.card{position:relative;border-radius:22px;border:1px solid #3E4247;box-shadow:inset 0 1px 0 rgba(255,255,255,.07),inset 0 -1px 0 rgba(0,0,0,.5),0 10px 24px rgba(0,0,0,.45);background:radial-gradient(circle at 35% 30%,#F0EDE6 0,#8E8B85 2.9px,#4A4D52 4.2px,rgba(0,0,0,0) 4.5px),radial-gradient(circle at 35% 30%,#F0EDE6 0,#8E8B85 2.9px,#4A4D52 4.2px,rgba(0,0,0,0) 4.5px),radial-gradient(circle at 35% 30%,#F0EDE6 0,#8E8B85 2.9px,#4A4D52 4.2px,rgba(0,0,0,0) 4.5px),radial-gradient(circle at 35% 30%,#F0EDE6 0,#8E8B85 2.9px,#4A4D52 4.2px,rgba(0,0,0,0) 4.5px),repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 1px,rgba(255,255,255,0) 1px 3px),linear-gradient(180deg,#26292D 0%,#1B1D20 100%);background-size:10px 10px,10px 10px,10px 10px,10px 10px,auto,auto;background-repeat:no-repeat;background-position:14px 14px,calc(100% - 14px) 14px,14px calc(100% - 14px),calc(100% - 14px) calc(100% - 14px),0 0,0 0;padding:44px 48px}
+@media (max-width:600px){.card{padding:36px 24px}}
+.turn{transform-box:view-box;transform-origin:50% 50%;animation:s 9s linear infinite}@keyframes s{to{transform:rotate(360deg)}}@media (prefers-reduced-motion:reduce){.turn{animation:none}}
 </style>
 </head>
 <body>
-<header><a href="/">VAULT CLERK</a></header>
+<header><a href="/" aria-label="Vault Clerk home"><svg class="logo" viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="wPR" gradientUnits="userSpaceOnUse" x1="14" y1="10" x2="106" y2="110"><stop offset="0" stop-color="#D9D6CF"/><stop offset=".5" stop-color="#A3A09A"/><stop offset="1" stop-color="#55524D"/></linearGradient><linearGradient id="wPI" gradientUnits="userSpaceOnUse" x1="106" y1="110" x2="14" y2="10"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".35"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity=".45"/></linearGradient><linearGradient id="wPS" gradientUnits="userSpaceOnUse" x1="20" y1="20" x2="100" y2="100"><stop offset="0" stop-color="#D9D6CF"/><stop offset=".5" stop-color="#9C9993"/><stop offset="1" stop-color="#55524D"/></linearGradient><radialGradient id="wPH" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#E2C688"/><stop offset=".6" stop-color="#C49E5C"/><stop offset="1" stop-color="#8A6A35"/></radialGradient><filter id="wPD" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.6" stdDeviation="1.4" flood-color="#000" flood-opacity="0.6"/></filter></defs><g filter="url(#wPD)"><circle cx="60" cy="60" r="53" fill="none" stroke="url(#wPR)" stroke-width="6"/><circle cx="60" cy="60" r="56.2" fill="none" stroke="#0B0C0D" stroke-width="0.8" opacity=".8"/><circle cx="60" cy="60" r="49.6" fill="none" stroke="url(#wPI)" stroke-width="1"/><g class="turn"><g stroke="url(#wPS)" stroke-width="7.5" stroke-linecap="round"><line x1="60" y1="60" x2="60" y2="19" transform="rotate(0 60 60)"/><line x1="60" y1="60" x2="60" y2="19" transform="rotate(90 60 60)"/><line x1="60" y1="60" x2="60" y2="19" transform="rotate(180 60 60)"/><line x1="60" y1="60" x2="60" y2="19" transform="rotate(270 60 60)"/></g><g stroke="#FFFFFF" stroke-opacity=".3" stroke-width="1.2" stroke-linecap="round"><line x1="58.4" y1="48" x2="58.4" y2="21" transform="rotate(0 60 60)"/><line x1="58.4" y1="48" x2="58.4" y2="21" transform="rotate(90 60 60)"/><line x1="58.4" y1="48" x2="58.4" y2="21" transform="rotate(180 60 60)"/><line x1="58.4" y1="48" x2="58.4" y2="21" transform="rotate(270 60 60)"/></g><circle cx="60" cy="60" r="11.5" fill="url(#wPH)" stroke="#5E4520" stroke-width="1"/><circle cx="60" cy="60" r="9.8" fill="none" stroke="#F3DCA4" stroke-opacity=".35" stroke-width="0.7"/></g></g></svg><span>VAULT CLERK</span></a></header>
 <main>
   <div class="card">
     <h1>Privacy: the beta sign-up</h1>

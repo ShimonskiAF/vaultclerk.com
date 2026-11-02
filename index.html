@@ -7,7 +7,7 @@
 <meta name="description" content="Vault Clerk is a desktop app for independent musicians. It files a messy Inbox into your vault, searches inside your documents, and answers briefs with filled paperwork and the right audio. No account, no cloud. Join the beta.">
 <link rel="canonical" href="https://vaultclerk.com/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-<meta name="theme-color" content="#121315">
+<meta name="theme-color" content="#14130F">
 <meta name="author" content="Craving Sofa Entertainment">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -84,8 +84,8 @@
       "description": "Ingest: reading a demo Inbox, suggesting a place for each file and copying them into the vault after approval.",
       "thumbnailUrl": "https://vaultclerk.com/demos/ingest.jpg",
       "contentUrl": "https://vaultclerk.com/demos/ingest.mp4",
-      "uploadDate": "2026-11-02T14:30:00+11:00",
-      "duration": "PT15S",
+      "uploadDate": "2026-11-03T06:50:00+11:00",
+      "duration": "PT18S",
       "isFamilyFriendly": true,
       "about": { "@id": "https://vaultclerk.com/#software" },
       "publisher": { "@id": "https://cravingsofa.com/#organization" }
@@ -97,8 +97,8 @@
       "description": "Search: typing Midnight Drive and getting matching masters, previews, artwork, a split sheet and metadata.",
       "thumbnailUrl": "https://vaultclerk.com/demos/search.jpg",
       "contentUrl": "https://vaultclerk.com/demos/search.mp4",
-      "uploadDate": "2026-11-02T14:30:00+11:00",
-      "duration": "PT10S",
+      "uploadDate": "2026-11-03T06:50:00+11:00",
+      "duration": "PT13S",
       "isFamilyFriendly": true,
       "about": { "@id": "https://vaultclerk.com/#software" },
       "publisher": { "@id": "https://cravingsofa.com/#organization" }
@@ -110,8 +110,8 @@
       "description": "Request: pasting a sync brief, matching the catalogue and building a package of paperwork, audio and a rights summary.",
       "thumbnailUrl": "https://vaultclerk.com/demos/request.jpg",
       "contentUrl": "https://vaultclerk.com/demos/request.mp4",
-      "uploadDate": "2026-11-02T14:30:00+11:00",
-      "duration": "PT18S",
+      "uploadDate": "2026-11-03T06:50:00+11:00",
+      "duration": "PT21S",
       "isFamilyFriendly": true,
       "about": { "@id": "https://vaultclerk.com/#software" },
       "publisher": { "@id": "https://cravingsofa.com/#organization" }
@@ -123,8 +123,8 @@
       "description": "Pitch: choosing projects and permissions, making a password and exporting a pitch room.",
       "thumbnailUrl": "https://vaultclerk.com/demos/pitch.jpg",
       "contentUrl": "https://vaultclerk.com/demos/pitch.mp4",
-      "uploadDate": "2026-11-02T14:30:00+11:00",
-      "duration": "PT18S",
+      "uploadDate": "2026-11-03T06:50:00+11:00",
+      "duration": "PT20S",
       "isFamilyFriendly": true,
       "about": { "@id": "https://vaultclerk.com/#software" },
       "publisher": { "@id": "https://cravingsofa.com/#organization" }
@@ -136,8 +136,8 @@
       "description": "Projects list: two projects marked LIVE and one marked DARK because two tracks have no signed split sheet.",
       "thumbnailUrl": "https://vaultclerk.com/demos/livedark.jpg",
       "contentUrl": "https://vaultclerk.com/demos/livedark.mp4",
-      "uploadDate": "2026-11-02T14:30:00+11:00",
-      "duration": "PT11S",
+      "uploadDate": "2026-11-03T06:50:00+11:00",
+      "duration": "PT12S",
       "isFamilyFriendly": true,
       "about": { "@id": "https://vaultclerk.com/#software" },
       "publisher": { "@id": "https://cravingsofa.com/#organization" }
@@ -279,6 +279,90 @@ footer .wrap{align-items:center}
 .demo h3{font:600 26px/1.15 var(--title);margin:0 0 8px}
 .demo p{margin:0;color:var(--muted);font-size:15.5px}
 @media (max-width:900px){.demos{grid-template-columns:1fr}.demo.wide{display:flex}.demo.wide .screen{border-right:0;border-bottom:3px solid var(--brass)}}
+/* ===== Metal vault, glass windows (locked 3 Nov 2026) =====
+   The page is the vault: bolted satin-steel plates on the gold-bar room.
+   Cards are insets in the metal. Gold means value or action.
+   Glass only where the clerk speaks or floats: the top bar and the "Here's what I'll do" plan. */
+:root{
+  --ground:#14130F;--paper:#1B1D20;--ink:#F4F1EA;--muted:#B9B4A8;--hair:#3A3D41;--accent:#E2C07F;
+  --plate:repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 1px,rgba(255,255,255,0) 1px 3px),linear-gradient(180deg,#26292D 0%,#1B1D20 100%);
+  --inset:repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 1px,rgba(255,255,255,0) 1px 3px),linear-gradient(180deg,#212327 0%,#181A1D 100%);
+  --plate-shadow:inset 0 1px 0 rgba(255,255,255,.07),inset 0 -1px 0 rgba(0,0,0,.5),0 10px 24px rgba(0,0,0,.45);
+  --inset-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 2px 6px rgba(0,0,0,.35);
+  --sgold:linear-gradient(180deg,#E2C07F 0%,#C9A35E 100%);
+  --bolt:radial-gradient(circle at 35% 30%,#F0EDE6 0,#8E8B85 2.9px,#4A4D52 4.2px,rgba(0,0,0,0) 4.5px);
+}
+body{background:#14130F url(/vault-bg.svg) center top/cover no-repeat fixed;color:var(--ink)}
+a{color:var(--accent)}a:hover{color:#F4F1EA}
+.hero{background:linear-gradient(180deg,rgba(20,19,15,.25),rgba(20,19,15,.55))}
+.top{position:sticky;top:12px;z-index:5;margin-top:16px;padding:12px 18px;border-radius:24px;background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.03) 45%,rgba(255,255,255,.06)),rgba(20,19,15,.35);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.38),inset 0 -1px 0 rgba(0,0,0,.35),0 20px 50px rgba(0,0,0,.45);-webkit-backdrop-filter:blur(26px) saturate(170%);backdrop-filter:blur(26px) saturate(170%)}
+.brand .logo{width:38px;height:38px}
+.brand .wm{background:linear-gradient(180deg,#FFFFFF 0%,#E2DFD8 45%,#9C9993 55%,#CFCCC5 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 0 #000)}
+.top nav a{color:#E9E3D6}
+.door .hero-wheel{width:min(360px,78vw);height:auto;filter:drop-shadow(0 18px 30px rgba(0,0,0,.55))}
+.turn{transform-box:view-box;transform-origin:50% 50%;animation:spin 9s linear infinite}
+.brand .turn{animation-duration:12s}
+@media (prefers-reduced-motion:reduce){.turn{animation:none}}
+h1{text-shadow:0 2px 18px rgba(0,0,0,.5)}
+.lede{color:#F4F1EA}
+.btn-gold{background:var(--sgold);border:1px solid #A9844C;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 2px 6px rgba(0,0,0,.5);color:#121315}
+.btn-gold:hover{background:var(--sgold);filter:brightness(1.05);color:#121315}
+.btn-line{background:linear-gradient(180deg,#2E3135 0%,#222428 100%);border:1px solid #4A4E54;box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 1px 2px rgba(0,0,0,.5);color:#F4F1EA}
+.btn-line:hover{border-color:#B8935A;background:linear-gradient(180deg,#2E3135 0%,#222428 100%);color:#F4F1EA}
+.promise{border-top:1px solid rgba(255,255,255,.12)}
+
+/* every section is a bolted steel plate on the vault */
+main{padding:8px 0 24px}
+section{padding:12px 0}
+section>.wrap,.close>.wrap{position:relative;padding:56px 56px 60px;border-radius:22px;border:1px solid #3E4247;box-shadow:var(--plate-shadow);
+  background:var(--bolt),var(--bolt),var(--bolt),var(--bolt),var(--plate);
+  background-size:10px 10px,10px 10px,10px 10px,10px 10px,auto,auto;background-repeat:no-repeat;
+  background-position:14px 14px,calc(100% - 14px) 14px,14px calc(100% - 14px),calc(100% - 14px) calc(100% - 14px),0 0,0 0;
+  max-width:1120px;margin:0 auto;width:calc(100% - 48px)}
+#features{padding-top:12px!important}#demos{padding-top:12px!important}
+.eyebrow{color:var(--accent)}
+.intro{color:var(--muted)}
+
+/* insets sit in the metal */
+.steps li,.box,.rule,details,.demo,.beta,.chips label{background:var(--inset);border:1px solid #3A3D41;box-shadow:var(--inset-shadow);color:var(--ink)}
+.steps p,.boxes p,.box ul,.rule p,details p,.demo p{color:var(--muted)}
+.band{background:none;color:var(--ink)}
+.rule h3{color:var(--accent)}
+
+/* engraved gold number plates */
+.plate{background:linear-gradient(180deg,#CDA96D 0%,#A9844C 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 1px 1px rgba(0,0,0,.5);color:#1E1608;text-shadow:0 1px 0 rgba(255,236,190,.35);font-weight:700}
+
+/* glass: the clerk speaking */
+.plan{position:relative;background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.03) 45%,rgba(255,255,255,.06)),rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.16);border-radius:24px;box-shadow:inset 0 1px 0 rgba(255,255,255,.38),inset 0 -1px 0 rgba(0,0,0,.35),0 30px 70px rgba(0,0,0,.55);color:#E9E3D6;-webkit-backdrop-filter:blur(26px) saturate(170%);backdrop-filter:blur(26px) saturate(170%)}
+.plan .h,.plan b{color:var(--accent)}
+.plan .ok{color:#F4F1EA}
+
+/* demos */
+.demo .screen{border-bottom-color:#A9844C}
+.demo.wide .screen{border-right-color:#A9844C}
+
+/* FAQ */
+summary::after{color:var(--accent)}
+
+/* beta form */
+.close{background:none;border-top:0;padding:12px 0 48px}
+.close p{color:var(--muted)}
+.close .btn-gold{background:var(--sgold);color:#121315}
+.close .btn-gold:hover{background:var(--sgold)}
+.beta{background:var(--inset)}
+.field label span,.field legend span,.fine{color:var(--muted)}
+.beta input[type=text],.beta input[type=email],.beta textarea{background:#121315;color:#F4F1EA;border:1px solid #34373B;box-shadow:inset 0 2px 5px rgba(0,0,0,.6),inset 0 -1px 0 rgba(255,255,255,.05)}
+.beta input:focus,.beta textarea:focus{border-color:#B8935A;outline:2px solid rgba(212,175,106,.45);outline-offset:1px}
+.chips label{background:linear-gradient(180deg,#2E3135 0%,#222428 100%);border-color:#4A4E54}
+.chips input,.consent input{accent-color:#C9A35E}
+.beta button.btn-gold{border:1px solid #A9844C}
+
+footer{background:rgba(18,19,21,.9);border-top:1px solid #3A3D41}
+footer a{color:var(--accent)}
+.social a{border-color:#4A4E54;background:linear-gradient(180deg,#2E3135 0%,#222428 100%)}
+
+@media (max-width:900px){.door .hero-wheel{width:170px}.hero{background:linear-gradient(180deg,rgba(20,19,15,.55),rgba(20,19,15,.82))}section>.wrap,.close>.wrap{padding:40px 24px 44px;width:calc(100% - 24px)}.top{border-radius:20px;top:8px}}
+@media (max-width:560px){.top nav a:not(:last-child){display:none}}
 </style>
 </head>
 <body>
@@ -288,8 +372,8 @@ footer .wrap{align-items:center}
   <div class="wrap">
     <div class="top">
       <a class="brand" href="/" aria-label="Vault Clerk home">
-        <svg width="34" height="34" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54" fill="none" stroke="#C9C6BF" stroke-width="5"/><g stroke="#C9C6BF" stroke-width="7" stroke-linecap="round"><path d="M60 60V18"/><path d="M60 60V18" transform="rotate(60 60 60)"/><path d="M60 60V18" transform="rotate(120 60 60)"/><path d="M60 60V18" transform="rotate(180 60 60)"/><path d="M60 60V18" transform="rotate(240 60 60)"/><path d="M60 60V18" transform="rotate(300 60 60)"/></g><g fill="#D4AF6A"><circle cx="60" cy="15" r="9"/><circle cx="60" cy="15" r="9" transform="rotate(60 60 60)"/><circle cx="60" cy="15" r="9" transform="rotate(120 60 60)"/><circle cx="60" cy="15" r="9" transform="rotate(180 60 60)"/><circle cx="60" cy="15" r="9" transform="rotate(240 60 60)"/><circle cx="60" cy="15" r="9" transform="rotate(300 60 60)"/></g><circle cx="60" cy="60" r="17" fill="#D4AF6A"/></svg>
-        VAULT CLERK
+        <svg class="logo" viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="wBR" gradientUnits="userSpaceOnUse" x1="14" y1="10" x2="106" y2="110"><stop offset="0" stop-color="#D9D6CF"/><stop offset=".5" stop-color="#A3A09A"/><stop offset="1" stop-color="#55524D"/></linearGradient><linearGradient id="wBI" gradientUnits="userSpaceOnUse" x1="106" y1="110" x2="14" y2="10"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".35"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity=".45"/></linearGradient><linearGradient id="wBS" gradientUnits="userSpaceOnUse" x1="20" y1="20" x2="100" y2="100"><stop offset="0" stop-color="#D9D6CF"/><stop offset=".5" stop-color="#9C9993"/><stop offset="1" stop-color="#55524D"/></linearGradient><radialGradient id="wBH" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#E2C688"/><stop offset=".6" stop-color="#C49E5C"/><stop offset="1" stop-color="#8A6A35"/></radialGradient><filter id="wBD" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.6" stdDeviation="1.4" flood-color="#000" flood-opacity="0.6"/></filter></defs><g filter="url(#wBD)"><circle cx="60" cy="60" r="53" fill="none" stroke="url(#wBR)" stroke-width="6"/><circle cx="60" cy="60" r="56.2" fill="none" stroke="#0B0C0D" stroke-width="0.8" opacity=".8"/><circle cx="60" cy="60" r="49.6" fill="none" stroke="url(#wBI)" stroke-width="1"/><g class="turn"><g stroke="url(#wBS)" stroke-width="7.5" stroke-linecap="round"><line x1="60" y1="60" x2="60" y2="19" transform="rotate(0 60 60)"/><line x1="60" y1="60" x2="60" y2="19" transform="rotate(90 60 60)"/><line x1="60" y1="60" x2="60" y2="19" transform="rotate(180 60 60)"/><line x1="60" y1="60" x2="60" y2="19" transform="rotate(270 60 60)"/></g><g stroke="#FFFFFF" stroke-opacity=".3" stroke-width="1.2" stroke-linecap="round"><line x1="58.4" y1="48" x2="58.4" y2="21" transform="rotate(0 60 60)"/><line x1="58.4" y1="48" x2="58.4" y2="21" transform="rotate(90 60 60)"/><line x1="58.4" y1="48" x2="58.4" y2="21" transform="rotate(180 60 60)"/><line x1="58.4" y1="48" x2="58.4" y2="21" transform="rotate(270 60 60)"/></g><circle cx="60" cy="60" r="11.5" fill="url(#wBH)" stroke="#5E4520" stroke-width="1"/><circle cx="60" cy="60" r="9.8" fill="none" stroke="#F3DCA4" stroke-opacity=".35" stroke-width="0.7"/></g></g></svg>
+        <span class="wm">VAULT CLERK</span>
       </a>
       <nav aria-label="Page sections">
         <a href="#how">How it works</a>
@@ -313,15 +397,7 @@ footer .wrap{align-items:center}
         </div>
       </div>
       <div class="door">
-        <svg viewBox="0 0 120 120" role="img" aria-label="The Vault Clerk handwheel, the wheel that opens a vault door">
-          <g class="spin">
-            <circle cx="60" cy="60" r="54" fill="none" stroke="#C9C6BF" stroke-width="2"/>
-            <g stroke="#C9C6BF" stroke-width="3" stroke-linecap="round"><path d="M60 60V18"/><path d="M60 60V18" transform="rotate(45 60 60)"/><path d="M60 60V18" transform="rotate(90 60 60)"/><path d="M60 60V18" transform="rotate(135 60 60)"/><path d="M60 60V18" transform="rotate(180 60 60)"/><path d="M60 60V18" transform="rotate(225 60 60)"/><path d="M60 60V18" transform="rotate(270 60 60)"/><path d="M60 60V18" transform="rotate(315 60 60)"/></g>
-            <g fill="#D4AF6A"><circle cx="60" cy="16" r="5"/><circle cx="60" cy="16" r="5" transform="rotate(45 60 60)"/><circle cx="60" cy="16" r="5" transform="rotate(90 60 60)"/><circle cx="60" cy="16" r="5" transform="rotate(135 60 60)"/><circle cx="60" cy="16" r="5" transform="rotate(180 60 60)"/><circle cx="60" cy="16" r="5" transform="rotate(225 60 60)"/><circle cx="60" cy="16" r="5" transform="rotate(270 60 60)"/><circle cx="60" cy="16" r="5" transform="rotate(315 60 60)"/></g>
-            <circle cx="60" cy="60" r="16" fill="#121315" stroke="#C9C6BF" stroke-width="2.5"/>
-            <circle cx="60" cy="60" r="7" fill="#D4AF6A"/>
-          </g>
-        </svg>
+        <svg class="hero-wheel" viewBox="0 0 120 120" role="img" aria-label="The Vault Clerk handwheel, the wheel that opens a vault door"><defs><linearGradient id="wHR" gradientUnits="userSpaceOnUse" x1="14" y1="10" x2="106" y2="110"><stop offset="0" stop-color="#D9D6CF"/><stop offset=".5" stop-color="#A3A09A"/><stop offset="1" stop-color="#55524D"/></linearGradient><linearGradient id="wHI" gradientUnits="userSpaceOnUse" x1="106" y1="110" x2="14" y2="10"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".35"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity=".45"/></linearGradient><linearGradient id="wHS" gradientUnits="userSpaceOnUse" x1="20" y1="20" x2="100" y2="100"><stop offset="0" stop-color="#D9D6CF"/><stop offset=".5" stop-color="#9C9993"/><stop offset="1" stop-color="#55524D"/></linearGradient><radialGradient id="wHH" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#E2C688"/><stop offset=".6" stop-color="#C49E5C"/><stop offset="1" stop-color="#8A6A35"/></radialGradient><filter id="wHD" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.6" stdDeviation="1.4" flood-color="#000" flood-opacity="0.6"/></filter></defs><g filter="url(#wHD)"><circle cx="60" cy="60" r="53" fill="none" stroke="url(#wHR)" stroke-width="6"/><circle cx="60" cy="60" r="56.2" fill="none" stroke="#0B0C0D" stroke-width="0.8" opacity=".8"/><circle cx="60" cy="60" r="49.6" fill="none" stroke="url(#wHI)" stroke-width="1"/><g class="turn"><g stroke="url(#wHS)" stroke-width="7.5" stroke-linecap="round"><line x1="60" y1="60" x2="60" y2="19" transform="rotate(0 60 60)"/><line x1="60" y1="60" x2="60" y2="19" transform="rotate(90 60 60)"/><line x1="60" y1="60" x2="60" y2="19" transform="rotate(180 60 60)"/><line x1="60" y1="60" x2="60" y2="19" transform="rotate(270 60 60)"/></g><g stroke="#FFFFFF" stroke-opacity=".3" stroke-width="1.2" stroke-linecap="round"><line x1="58.4" y1="48" x2="58.4" y2="21" transform="rotate(0 60 60)"/><line x1="58.4" y1="48" x2="58.4" y2="21" transform="rotate(90 60 60)"/><line x1="58.4" y1="48" x2="58.4" y2="21" transform="rotate(180 60 60)"/><line x1="58.4" y1="48" x2="58.4" y2="21" transform="rotate(270 60 60)"/></g><circle cx="60" cy="60" r="11.5" fill="url(#wHH)" stroke="#5E4520" stroke-width="1"/><circle cx="60" cy="60" r="9.8" fill="none" stroke="#F3DCA4" stroke-opacity=".35" stroke-width="0.7"/></g></g></svg>
       </div>
     </div>
 
