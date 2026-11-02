@@ -27,6 +27,10 @@ Cloud sync or storage, hosted share links, team or shared vaults, a mobile app, 
 - Social: X https://x.com/VaultClerkApp (@VaultClerkApp), Instagram https://www.instagram.com/vaultclerk/ (@VaultClerk).
 - Maker: Craving Sofa Entertainment (https://cravingsofa.com/), which also makes GenreMatch (https://genrematch.app/).
 
+## Demo clips
+
+Short silent clips recorded in the beta with the app's sample vault: [Ingest](https://vaultclerk.com/demos/ingest.mp4), [Search](https://vaultclerk.com/demos/search.mp4), [Request](https://vaultclerk.com/demos/request.mp4), [Pitch room](https://vaultclerk.com/demos/pitch.mp4), [LIVE/DARK projects](https://vaultclerk.com/demos/livedark.mp4).
+
 ## Pages
 
 - [Vault Clerk home](https://vaultclerk.com/): what Vault Clerk is, how it works, FAQ and the beta sign-up.

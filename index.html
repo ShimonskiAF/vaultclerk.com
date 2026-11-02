@@ -78,6 +78,71 @@
       "publisher": { "@id": "https://cravingsofa.com/#organization" }
     },
     {
+      "@type": "VideoObject",
+      "@id": "https://vaultclerk.com/#demo-ingest",
+      "name": "Vault Clerk demo: Filing a messy Inbox",
+      "description": "Ingest: reading a demo Inbox, suggesting a place for each file and copying them into the vault after approval.",
+      "thumbnailUrl": "https://vaultclerk.com/demos/ingest.jpg",
+      "contentUrl": "https://vaultclerk.com/demos/ingest.mp4",
+      "uploadDate": "2026-11-02T14:30:00+11:00",
+      "duration": "PT15S",
+      "isFamilyFriendly": true,
+      "about": { "@id": "https://vaultclerk.com/#software" },
+      "publisher": { "@id": "https://cravingsofa.com/#organization" }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://vaultclerk.com/#demo-search",
+      "name": "Vault Clerk demo: Finding things again",
+      "description": "Search: typing Midnight Drive and getting matching masters, previews, artwork, a split sheet and metadata.",
+      "thumbnailUrl": "https://vaultclerk.com/demos/search.jpg",
+      "contentUrl": "https://vaultclerk.com/demos/search.mp4",
+      "uploadDate": "2026-11-02T14:30:00+11:00",
+      "duration": "PT10S",
+      "isFamilyFriendly": true,
+      "about": { "@id": "https://vaultclerk.com/#software" },
+      "publisher": { "@id": "https://cravingsofa.com/#organization" }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://vaultclerk.com/#demo-request",
+      "name": "Vault Clerk demo: Answering a sync brief",
+      "description": "Request: pasting a sync brief, matching the catalogue and building a package of paperwork, audio and a rights summary.",
+      "thumbnailUrl": "https://vaultclerk.com/demos/request.jpg",
+      "contentUrl": "https://vaultclerk.com/demos/request.mp4",
+      "uploadDate": "2026-11-02T14:30:00+11:00",
+      "duration": "PT18S",
+      "isFamilyFriendly": true,
+      "about": { "@id": "https://vaultclerk.com/#software" },
+      "publisher": { "@id": "https://cravingsofa.com/#organization" }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://vaultclerk.com/#demo-pitch",
+      "name": "Vault Clerk demo: Exporting a pitch room",
+      "description": "Pitch: choosing projects and permissions, making a password and exporting a pitch room.",
+      "thumbnailUrl": "https://vaultclerk.com/demos/pitch.jpg",
+      "contentUrl": "https://vaultclerk.com/demos/pitch.mp4",
+      "uploadDate": "2026-11-02T14:30:00+11:00",
+      "duration": "PT18S",
+      "isFamilyFriendly": true,
+      "about": { "@id": "https://vaultclerk.com/#software" },
+      "publisher": { "@id": "https://cravingsofa.com/#organization" }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://vaultclerk.com/#demo-livedark",
+      "name": "Vault Clerk demo: Knowing what's clear to pitch",
+      "description": "Projects list: two projects marked LIVE and one marked DARK because two tracks have no signed split sheet.",
+      "thumbnailUrl": "https://vaultclerk.com/demos/livedark.jpg",
+      "contentUrl": "https://vaultclerk.com/demos/livedark.mp4",
+      "uploadDate": "2026-11-02T14:30:00+11:00",
+      "duration": "PT11S",
+      "isFamilyFriendly": true,
+      "about": { "@id": "https://vaultclerk.com/#software" },
+      "publisher": { "@id": "https://cravingsofa.com/#organization" }
+    },
+    {
       "@type": "FAQPage",
       "@id": "https://vaultclerk.com/#faq",
       "mainEntity": [
@@ -204,6 +269,16 @@ footer .wrap{align-items:center}
   section{padding:72px 0}
 }
 @media (max-width:560px){.steps{grid-template-columns:1fr}.top nav{gap:16px}}
+.demos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.demo{margin:0;background:var(--paper);border:1px solid var(--hair);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.demo.wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:center}
+.demo .screen{background:var(--bore);border-bottom:3px solid var(--brass);aspect-ratio:16/10}
+.demo.wide .screen{border-bottom:0;border-right:3px solid var(--brass);height:100%}
+.demo video{display:block;width:100%;height:100%;object-fit:cover}
+.demo figcaption{padding:22px 24px 26px}
+.demo h3{font:600 26px/1.15 var(--title);margin:0 0 8px}
+.demo p{margin:0;color:var(--muted);font-size:15.5px}
+@media (max-width:900px){.demos{grid-template-columns:1fr}.demo.wide{display:flex}.demo.wide .screen{border-right:0;border-bottom:3px solid var(--brass)}}
 </style>
 </head>
 <body>
@@ -218,6 +293,7 @@ footer .wrap{align-items:center}
       </a>
       <nav aria-label="Page sections">
         <a href="#how">How it works</a>
+        <a href="#demos">See it work</a>
         <a href="#features">What it does</a>
         <a href="#safe">Your files</a>
         <a href="#faq">FAQ</a>
@@ -270,6 +346,36 @@ footer .wrap{align-items:center}
         <li><span class="plate">III</span><h3>Request</h3><p>Paste a sync brief, live offer or collab request. It builds the package: filled paperwork, the right audio and a rights summary.</p></li>
         <li><span class="plate">IV</span><h3>Pitch</h3><p>Turn chosen projects into a password-protected listening page that you upload to your own web host.</p></li>
       </ol>
+    </div>
+  </section>
+
+  <section id="demos" aria-labelledby="demos-title" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow">SEE IT WORK</p>
+      <h2 id="demos-title">Short clips from the app.</h2>
+      <p class="intro">Recorded in the beta with the sample vault that comes with the app. No sound, a few seconds each.</p>
+      <div class="demos">
+        <figure class="demo wide">
+          <div class="screen"><video src="/demos/ingest.mp4" poster="/demos/ingest.jpg" muted loop playsinline preload="none" width="1280" height="800" aria-label="Ingest: reading a demo Inbox, suggesting a place for each file and copying them into the vault after approval."></video></div>
+          <figcaption><span class="plate">INGEST</span><h3>Filing a messy Inbox</h3><p>It reads the Inbox, suggests where each file belongs with a short reason, and shows the plan. Files are copied in only after you say yes.</p></figcaption>
+        </figure>
+        <figure class="demo">
+          <div class="screen"><video src="/demos/search.mp4" poster="/demos/search.jpg" muted loop playsinline preload="none" width="1280" height="800" aria-label="Search: typing Midnight Drive and getting matching masters, previews, artwork, a split sheet and metadata."></video></div>
+          <figcaption><span class="plate">SEARCH</span><h3>Finding things again</h3><p>Search by title, person or phrase. It looks inside PDF, Word, Excel and text files, not just at file names.</p></figcaption>
+        </figure>
+        <figure class="demo">
+          <div class="screen"><video src="/demos/request.mp4" poster="/demos/request.jpg" muted loop playsinline preload="none" width="1280" height="800" aria-label="Request: pasting a sync brief, matching the catalogue and building a package of paperwork, audio and a rights summary."></video></div>
+          <figcaption><span class="plate">REQUEST</span><h3>Answering a sync brief</h3><p>Paste the brief. It matches your catalogue, checks rights status and builds the package: paperwork, audio, key art and a rights summary. Nothing is sent.</p></figcaption>
+        </figure>
+        <figure class="demo">
+          <div class="screen"><video src="/demos/pitch.mp4" poster="/demos/pitch.jpg" muted loop playsinline preload="none" width="1280" height="800" aria-label="Pitch: choosing projects and permissions, making a password and exporting a pitch room."></video></div>
+          <figcaption><span class="plate">PITCH</span><h3>Exporting a pitch room</h3><p>Choose the projects, what people can do and what they see, then set a password. You upload the room to your own web host.</p></figcaption>
+        </figure>
+        <figure class="demo">
+          <div class="screen"><video src="/demos/livedark.mp4" poster="/demos/livedark.jpg" muted loop playsinline preload="none" width="1280" height="800" aria-label="Projects list: two projects marked LIVE and one marked DARK because two tracks have no signed split sheet."></video></div>
+          <figcaption><span class="plate">LIVE / DARK</span><h3>Knowing what's clear to pitch</h3><p>Each project is marked LIVE or DARK, with the reason, worked out from the paperwork in your vault.</p></figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -423,5 +529,12 @@ footer .wrap{align-items:center}
     <span>No cookies, no tracking. <a href="/privacy">Privacy</a></span>
   </div>
 </footer>
+<script>
+(function(){var v=[].slice.call(document.querySelectorAll('.demo video'));if(!v.length)return;
+var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(still||!('IntersectionObserver' in window)){v.forEach(function(x){x.controls=true;x.loop=false});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){var x=e.target;if(e.isIntersecting){x.preload='auto';var p=x.play();if(p&&p.catch)p.catch(function(){x.controls=true})}else{x.pause()}})},{threshold:.35});
+v.forEach(function(x){io.observe(x)});})();
+</script>
 </body>
 </html>
