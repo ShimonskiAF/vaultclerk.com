@@ -29,7 +29,7 @@ Cloud sync or storage, hosted share links, team or shared vaults, a mobile app, 
 
 ## Demo clips
 
-Short silent clips recorded in the beta with the app's sample vault: [Ingest](https://vaultclerk.com/demos/ingest.mp4), [Search](https://vaultclerk.com/demos/search.mp4), [Request](https://vaultclerk.com/demos/request.mp4), [Pitch room](https://vaultclerk.com/demos/pitch.mp4), [LIVE/DARK projects](https://vaultclerk.com/demos/livedark.mp4).
+Short silent clips recorded in the beta with the app's sample vault, one per step: [Inbox](https://vaultclerk.com/demos/inbox.mp4), [File](https://vaultclerk.com/demos/file.mp4), [Request](https://vaultclerk.com/demos/request.mp4), [Pitch](https://vaultclerk.com/demos/pitch.mp4).
 
 ## Pages
 
