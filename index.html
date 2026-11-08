@@ -540,6 +540,23 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
 .tlegal{margin-top:22px!important;color:#B9B4A8!important}
 @media (max-width:1100px){.tgroups{grid-template-columns:repeat(2,minmax(0,1fr))}.tlooks{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.tgroups,.tlooks{grid-template-columns:1fr}}
+
+.tlook a.tzoom{position:relative;display:block;border-radius:6px;cursor:zoom-in}
+.tlook a.tzoom img{transition:transform .2s}
+.tlook a.tzoom:hover img{transform:scale(1.02)}
+.tzicon{position:absolute;right:8px;bottom:8px;width:30px;height:30px;border-radius:15px;display:grid;place-items:center;background:rgba(18,19,21,.75);color:#E2C07F;font-size:15px;box-shadow:0 0 0 1px rgba(226,192,127,.4)}
+.tbox{padding:0;border:0;background:transparent;max-width:min(860px,94vw);width:100%;max-height:94vh}
+.tbox::backdrop{background:rgba(8,9,10,.72);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.tbox-in{display:flex;flex-direction:column;max-height:94vh;border-radius:22px;overflow:hidden;background:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,rgba(255,255,255,0) 1px 3px),linear-gradient(180deg,#464A50 0%,#2B2E32 100%);border:1px solid #63686F;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 30px 80px rgba(0,0,0,.7)}
+.tbox-h{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px 12px 22px}
+.tbox-h p{margin:0;color:#F4F1EA}
+.tbox-h b{font:600 13px/1 var(--display);letter-spacing:.16em;color:#E2C07F;margin-right:12px;text-transform:uppercase}
+.tbox-h span{color:#DCD6C9;font-size:15px}
+.tbox-x{width:44px;height:44px;border-radius:22px;border:1px solid #63686F;background:#2B2E32;color:#F4F1EA;font-size:16px;cursor:pointer}
+.tbox-img{overflow:auto;padding:0 16px;flex:1;min-height:0}
+.tbox-img img{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 0 0 1px #121315}
+.tbox-nav{display:flex;justify-content:space-between;padding:12px 16px}
+.tbox-nav button{min-height:44px;padding:0 18px;border-radius:22px;border:1px solid #63686F;background:linear-gradient(180deg,#3A3D42,#2B2E32);color:#F4F1EA;font:500 15px var(--sans);cursor:pointer}
 </style>
 </head>
 <body>
@@ -640,10 +657,17 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
         <article class="tgroup town"><span class="plate">YOUR OWN</span><p><b>Already have templates you like?</b></p><p>Use them instead. Vault Clerk fills your own contracts, quotes, invoices, split sheets and riders with your details: legal name, contact, PRO and IPI numbers, publisher and governing law. Your details are only used after you've checked them.</p></article>
       </div>
       <h3 class="tlooks-h">Four ready-made looks</h3>
-      <p class="tlooks-p">The same Sync &amp; Master Licence, filled in from a demo vault. Pick a look, or use your own templates.</p>
-      <div class="tlooks"><figure class="tlook"><img src="/templates/sync-licence-engraved.jpg" alt="A Sync and Master Use Licence filled in for a demo artist, in the Engraved look" width="640" height="463" loading="lazy"><figcaption>Engraved</figcaption></figure><figure class="tlook"><img src="/templates/sync-licence-classic.jpg" alt="A Sync and Master Use Licence filled in for a demo artist, in the Classic look" width="640" height="463" loading="lazy"><figcaption>Classic</figcaption></figure><figure class="tlook"><img src="/templates/sync-licence-modern.jpg" alt="A Sync and Master Use Licence filled in for a demo artist, in the Modern look" width="640" height="463" loading="lazy"><figcaption>Modern</figcaption></figure><figure class="tlook"><img src="/templates/sync-licence-editorial.jpg" alt="A Sync and Master Use Licence filled in for a demo artist, in the Editorial look" width="640" height="463" loading="lazy"><figcaption>Editorial</figcaption></figure></div>
+      <p class="tlooks-p">The same Sync &amp; Master Licence in each look. Click one to see the full page. Pick a look, or use your own templates.</p>
+      <div class="tlooks"><figure class="tlook"><a href="/templates/sync-licence-engraved-full.jpg" class="tzoom" data-title="Engraved" data-who="Paul Allen" aria-label="Open the Engraved look full size"><img src="/templates/sync-licence-engraved.jpg" alt="The Sync and Master Use Licence template in the Engraved look, issued by Paul Allen of Pierce &amp; Pierce" width="640" height="463" loading="lazy"><span class="tzicon" aria-hidden="true">⤢</span></a><figcaption>Engraved</figcaption></figure><figure class="tlook"><a href="/templates/sync-licence-classic-full.jpg" class="tzoom" data-title="Classic" data-who="Patrick Bateman" aria-label="Open the Classic look full size"><img src="/templates/sync-licence-classic.jpg" alt="The Sync and Master Use Licence template in the Classic look, issued by Patrick Bateman of Pierce &amp; Pierce" width="640" height="463" loading="lazy"><span class="tzicon" aria-hidden="true">⤢</span></a><figcaption>Classic</figcaption></figure><figure class="tlook"><a href="/templates/sync-licence-modern-full.jpg" class="tzoom" data-title="Modern" data-who="Timothy Bryce" aria-label="Open the Modern look full size"><img src="/templates/sync-licence-modern.jpg" alt="The Sync and Master Use Licence template in the Modern look, issued by Timothy Bryce of Pierce &amp; Pierce" width="640" height="463" loading="lazy"><span class="tzicon" aria-hidden="true">⤢</span></a><figcaption>Modern</figcaption></figure><figure class="tlook"><a href="/templates/sync-licence-editorial-full.jpg" class="tzoom" data-title="Editorial" data-who="David Van Patten" aria-label="Open the Editorial look full size"><img src="/templates/sync-licence-editorial.jpg" alt="The Sync and Master Use Licence template in the Editorial look, issued by David Van Patten of Pierce &amp; Pierce" width="640" height="463" loading="lazy"><span class="tzicon" aria-hidden="true">⤢</span></a><figcaption>Editorial</figcaption></figure></div>
       <p class="fine tlegal">The templates are starting points, not legal advice. Have a lawyer check before you sign.</p>
     </div>
+    <dialog class="tbox" id="tbox" aria-labelledby="tbox-t">
+    <div class="tbox-in">
+      <div class="tbox-h"><p id="tbox-t"><b></b><span></span></p><button type="button" class="tbox-x" aria-label="Close">✕</button></div>
+      <div class="tbox-img"><img alt=""></div>
+      <div class="tbox-nav"><button type="button" class="tbox-p">← Previous</button><button type="button" class="tbox-n">Next →</button></div>
+    </div>
+  </dialog>
   </section>
 
   <section id="features" aria-labelledby="features-title" style="padding-top:0">
@@ -838,6 +862,17 @@ function pick(b){t.forEach(function(x){var on=x===b;x.classList.toggle('on',on);
 var d=b.getAttribute('data-docs').split(' ');document.querySelectorAll('.tgroup li').forEach(function(li){li.classList.toggle('hit',d.indexOf(li.getAttribute('data-doc'))>-1)});
 say.textContent=b.getAttribute('data-say')+' Plus a Quote when they ask for one.'}
 t.forEach(function(b){b.addEventListener('click',function(){pick(b)})});pick(t[0]);})();
+</script>
+<script>
+(function(){var d=document.getElementById('tbox');if(!d||!d.showModal)return;var a=[].slice.call(document.querySelectorAll('.tzoom')),cur=0,img=d.querySelector('.tbox-img img');
+function show(i){cur=(i+a.length)%a.length;var x=a[cur];img.src=x.getAttribute('href');img.alt=x.querySelector('img').alt;d.querySelector('#tbox-t b').textContent=x.dataset.title;d.querySelector('#tbox-t span').textContent='Issued by '+x.dataset.who+', Pierce & Pierce';d.querySelector('.tbox-img').scrollTop=0}
+a.forEach(function(x,i){x.addEventListener('click',function(e){e.preventDefault();show(i);d.showModal()})});
+d.querySelector('.tbox-x').addEventListener('click',function(){d.close()});
+d.querySelector('.tbox-p').addEventListener('click',function(){show(cur-1)});
+d.querySelector('.tbox-n').addEventListener('click',function(){show(cur+1)});
+d.addEventListener('click',function(e){if(e.target===d)d.close()});
+d.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+d.addEventListener('close',function(){a[cur].focus()});})();
 </script>
 </body>
 </html>
