@@ -77,6 +77,7 @@
         "Suggests where each file in an Inbox folder belongs in your vault, with a reason, and copies it in",
         "Never deletes anything; shows every action as a plan and waits for your yes",
         "Searches inside PDF, Word, Excel and text documents; reads scans on Mac",
+        "Comes with 18 templates in four looks: producer, session player, live performance, sync and master licence, commissioned score, statement of work and one-page NDA agreements, split sheet, rider, stage plot, quote, invoice, delivery receipt, books, expenses, deal brief, one-pager and metadata. Starting points, not legal advice.",
         "Answers a pasted brief with filled paperwork from your own templates, the right audio, key art and a rights summary",
         "Builds password-protected pitch rooms that expire on the date you set, for you to upload to your own web host",
         "Marks projects LIVE or DARK from the paperwork in your vault; DARK projects share preview copies only",
@@ -200,6 +201,22 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "No. It builds the package or pitch room, and you send or upload it yourself. Pitch rooms are password-protected pages that expire on the date you set, uploaded to your own web host."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which contract templates are included?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "18 templates come with the app, in four ready-made looks: Producer Agreement, Session Player Agreement, Split Sheet, Live Performance Agreement, Rider, Stage Plot, Sync & Master Licence, Commissioned Score Agreement, Statement of Work and a one-page NDA, plus a Quote, Invoice, Delivery Receipt, Company Books, Project Expenses, Deal Brief, Project One-Pager and Project Metadata. They are included with the app, not an add-on. You can use your own templates instead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are the templates legal advice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. They are starting points, not legal advice. Have a lawyer check before you sign."
           }
         },
         {
@@ -492,6 +509,37 @@ html.scrolly .tdots{display:flex;gap:8px;justify-content:flex-end;margin-top:14p
 /* iPhone and iPad Safari ignore fixed backgrounds: pin the vault on its own layer */
 body{background:#14130F}
 body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url(/vault-bg.svg) center top/cover no-repeat}
+
+/* Templates */
+.tpl-line{font-size:16.5px!important;color:#E9E3D6!important}
+.tpl-line b{color:#E2C07F;font-weight:600}
+.tpl-line a{color:#E2C07F}
+.tdeals{margin:0 0 28px}
+.tq{font:600 13.5px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#E2B85C;margin:0 0 12px}
+.ttabs{display:flex;gap:8px;flex-wrap:wrap}
+.tdeal{min-height:44px;padding:0 18px;border-radius:22px;border:1px solid #4A4E54;background:linear-gradient(180deg,#2E3135,#222428);color:#F4F1EA;font:500 15px var(--sans);cursor:pointer}
+.tdeal.on{background:linear-gradient(180deg,#E2C07F,#C9A35E);border-color:#A9844C;color:#121315;font-weight:600}
+.tsay{margin:12px 0 0;color:#DCD6C9;font-size:15.5px}
+.tgroups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.tgroup{padding:22px 22px 18px;border-radius:18px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,rgba(255,255,255,0) 1px 3px),linear-gradient(180deg,#464A50 0%,#33363B 55%,#2B2E32 100%);border:1px solid #63686F;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),inset 0 -1px 0 rgba(0,0,0,.45),0 14px 32px rgba(0,0,0,.5)}
+.tgroup .plate{margin-bottom:12px}
+.tgroup ul{list-style:none;margin:0;padding:0}
+.tgroup li{padding:10px 10px;margin:0 -10px;border-radius:10px;border-top:1px solid rgba(255,255,255,.08);transition:background .25s,box-shadow .25s}
+.tgroup li:first-child{border-top:0}
+.tgroup li b{display:block;color:#F4F1EA;font-weight:600;font-size:15.5px}
+.tgroup li span{display:block;color:#CFC9BC;font-size:14px;line-height:1.45}
+.town p{margin:0 0 10px;color:#DCD6C9;font-size:15px;line-height:1.55}.town p b{color:#F4F1EA}
+.tgroup li.hit{background:rgba(226,184,92,.14);box-shadow:inset 0 0 0 1px rgba(226,184,92,.6)}
+.tgroup li.hit b::after{content:" ✓";color:#E2C07F}
+.tlooks-h{font:600 30px/1.15 var(--title);margin:44px 0 6px}
+.tlooks-p{margin:0 0 18px;color:var(--muted)}
+.tlooks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.tlook{margin:0;padding:10px 10px 12px;border-radius:14px;background:linear-gradient(180deg,#464A50,#2B2E32);border:1px solid #63686F;box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 12px 28px rgba(0,0,0,.5)}
+.tlook img{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 0 0 1px #121315}
+.tlook figcaption{margin-top:10px;text-align:center;font:600 12.5px/1 var(--display);letter-spacing:.16em;color:#E2C07F;text-transform:uppercase}
+.tlegal{margin-top:22px!important;color:#B9B4A8!important}
+@media (max-width:1100px){.tgroups{grid-template-columns:repeat(2,minmax(0,1fr))}.tlooks{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.tgroups,.tlooks{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -506,6 +554,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
       </a>
       <nav aria-label="Page sections">
         <a href="#how">How it works</a>
+        <a href="#templates">Templates</a>
         <a href="#features">What it does</a>
         <a href="#safe">Your files</a>
         <a href="#faq">FAQ</a>
@@ -518,6 +567,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
         <span class="pill"><i aria-hidden="true"></i>COMING SOON</span>
         <h1>Your music business, filed.</h1>
         <p class="lede">Vault Clerk is a desktop app for independent musicians. It sorts a messy Inbox into your vault, finds anything inside your documents, and answers briefs with filled paperwork and the right audio. It runs on your own computer, and nothing happens until you say yes.</p>
+        <p class="lede tpl-line"><b>Comes with 18 templates</b>: contracts for sessions, gigs, sync and splits, plus quotes and invoices. <a href="#templates">See them</a></p>
         <p class="tag">Turn the wheel. Your files are in.</p>
         <div class="ctas">
           <a class="btn btn-gold" href="#beta">Join the beta</a>
@@ -531,7 +581,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
 
     <div class="promise">
       <span><b>LOCAL</b> by default, nothing uploaded</span>
-      <span><b>NO</b> account, no cloud</span>
+      <span><b>18</b> templates included</span>
       <span><b>NEVER</b> deletes anything</span>
       <span><b>MAC</b> &amp; <b>WINDOWS</b>, in beta</span>
     </div>
@@ -571,6 +621,31 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
     </div>
   </section>
 
+  <section id="templates" aria-labelledby="templates-title">
+    <div class="wrap">
+      <p class="eyebrow">THE PAPERWORK DRAWER</p>
+      <h2 id="templates-title">Contracts for the deals musicians actually do.</h2>
+      <p class="intro">Vault Clerk comes with 18 templates for the paperwork around a music career, included with the app, not an add-on. When a brief comes in, it fills the right ones with your details. Prefer your own? It fills those instead.</p>
+      <div class="tdeals">
+        <p class="tq">Which paperwork does this deal need?</p>
+        <div class="ttabs" role="group" aria-label="Pick a kind of deal"><button type="button" class="tdeal on" data-docs="sync-and-master-licence deal-brief project-one-pager" data-say="Sync &amp; Master Licence, Deal Brief and Project One-Pager." aria-pressed="true">Sync brief</button><button type="button" class="tdeal" data-docs="live-performance-agreement rider stage-plot deal-brief" data-say="Live Performance Agreement, Rider, Stage Plot and Deal Brief." aria-pressed="false">Live offer</button><button type="button" class="tdeal" data-docs="split-sheet producer-agreement one-page-nda deal-brief project-one-pager" data-say="Split Sheet, Producer Agreement, One-page NDA, Deal Brief and Project One-Pager." aria-pressed="false">Collab request</button></div>
+        <p class="tsay" aria-live="polite">Sync &amp; Master Licence, Deal Brief and Project One-Pager. Plus a Quote when they ask for one.</p>
+      </div>
+      <div class="tgroups">
+        <article class="tgroup"><span class="plate">IN THE STUDIO</span><ul><li data-doc="producer-agreement"><b>Producer Agreement</b><span>When a producer works on your record.</span></li><li data-doc="session-player-agreement"><b>Session Player Agreement</b><span>When you hire a player for a session.</span></li><li data-doc="split-sheet"><b>Split Sheet</b><span>Who wrote what share of a song.</span></li></ul></article>
+        <article class="tgroup"><span class="plate">ON STAGE</span><ul><li data-doc="live-performance-agreement"><b>Live Performance Agreement</b><span>When a venue or promoter books you.</span></li><li data-doc="rider"><b>Rider</b><span>What you need at the show.</span></li><li data-doc="stage-plot"><b>Stage Plot</b><span>Where everyone stands and what plugs in where.</span></li></ul></article>
+        <article class="tgroup"><span class="plate">LICENSING &amp; COMMISSIONS</span><ul><li data-doc="sync-and-master-licence"><b>Sync &amp; Master Licence</b><span>One placement in a film, show, ad or game.</span></li><li data-doc="commissioned-score-agreement"><b>Commissioned Score Agreement</b><span>When you're hired to write original music.</span></li><li data-doc="statement-of-work"><b>Statement of Work</b><span>Scope, deliverables and dates for a job.</span></li><li data-doc="one-page-nda"><b>One-page NDA</b><span>Before you share unreleased work.</span></li></ul></article>
+        <article class="tgroup"><span class="plate">GETTING PAID</span><ul><li data-doc="quote"><b>Quote</b><span>The price, before the work starts.</span></li><li data-doc="invoice"><b>Invoice</b><span>Getting paid for it.</span></li><li data-doc="delivery-receipt"><b>Delivery Receipt</b><span>Proof the files were delivered.</span></li><li data-doc="company-books"><b>Company Books</b><span>Income and costs in one spreadsheet.</span></li><li data-doc="project-expenses"><b>Project Expenses</b><span>What a release costs you.</span></li></ul></article>
+        <article class="tgroup"><span class="plate">PITCHING</span><ul><li data-doc="deal-brief"><b>Deal Brief</b><span>The deal, summed up on one page.</span></li><li data-doc="project-one-pager"><b>Project One-Pager</b><span>Your project at a glance for the person you're pitching.</span></li><li data-doc="project-metadata"><b>Project Metadata</b><span>Titles, ISRCs, writers and credits in one place.</span></li></ul></article>
+        <article class="tgroup town"><span class="plate">YOUR OWN</span><p><b>Already have templates you like?</b></p><p>Use them instead. Vault Clerk fills your own contracts, quotes, invoices, split sheets and riders with your details: legal name, contact, PRO and IPI numbers, publisher and governing law. Your details are only used after you've checked them.</p></article>
+      </div>
+      <h3 class="tlooks-h">Four ready-made looks</h3>
+      <p class="tlooks-p">The same Sync &amp; Master Licence, filled in from a demo vault. Pick a look, or use your own templates.</p>
+      <div class="tlooks"><figure class="tlook"><img src="/templates/sync-licence-engraved.jpg" alt="A Sync and Master Use Licence filled in for a demo artist, in the Engraved look" width="640" height="463" loading="lazy"><figcaption>Engraved</figcaption></figure><figure class="tlook"><img src="/templates/sync-licence-classic.jpg" alt="A Sync and Master Use Licence filled in for a demo artist, in the Classic look" width="640" height="463" loading="lazy"><figcaption>Classic</figcaption></figure><figure class="tlook"><img src="/templates/sync-licence-modern.jpg" alt="A Sync and Master Use Licence filled in for a demo artist, in the Modern look" width="640" height="463" loading="lazy"><figcaption>Modern</figcaption></figure><figure class="tlook"><img src="/templates/sync-licence-editorial.jpg" alt="A Sync and Master Use Licence filled in for a demo artist, in the Editorial look" width="640" height="463" loading="lazy"><figcaption>Editorial</figcaption></figure></div>
+      <p class="fine tlegal">The templates are starting points, not legal advice. Have a lawyer check before you sign.</p>
+    </div>
+  </section>
+
   <section id="features" aria-labelledby="features-title" style="padding-top:0">
     <div class="wrap">
       <p class="eyebrow">WHAT IT DOES</p>
@@ -593,8 +668,8 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
           <h3>Answer a brief in one go</h3>
           <ul>
             <li>Matches a brief to your catalogue and checks rights status</li>
-            <li>Fills your own templates: contracts, quotes, invoices, split sheets and riders</li>
-            <li>Or pick one of four ready-made template looks</li>
+            <li>Comes with 18 templates in four looks, or fills your own</li>
+            <li>Contracts, quotes, invoices, split sheets and riders</li>
             <li>Uses your details only after you've checked them</li>
             <li>Builds the package for you to send yourself</li>
           </ul>
@@ -644,6 +719,8 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
       <details><summary>Will Vault Clerk delete or move my files?</summary><p>No. It copies files into your vault and your Inbox keeps every original. It never deletes anything: duplicates and junk go to a Trash folder inside your vault that only you empty. Every action is shown as a plan first, and nothing happens until you say yes.</p></details>
       <details><summary>Does Vault Clerk use AI?</summary><p>Filing works mostly from clear rules and how you've filed before, and it learns from your corrections. A local AI model is optional and runs on your own computer. Nothing is sent to a cloud AI, and your identity and tax drawer is never sent to any AI.</p></details>
       <details><summary>Can Vault Clerk send emails or share files for me?</summary><p>No. It builds the package or pitch room, and you send or upload it yourself. Pitch rooms are password-protected pages that expire on the date you set, uploaded to your own web host.</p></details>
+      <details><summary>Which contract templates are included?</summary><p>18 templates come with the app, in four ready-made looks: Producer Agreement, Session Player Agreement, Split Sheet, Live Performance Agreement, Rider, Stage Plot, Sync &amp; Master Licence, Commissioned Score Agreement, Statement of Work and a one-page NDA, plus a Quote, Invoice, Delivery Receipt, Company Books, Project Expenses, Deal Brief, Project One-Pager and Project Metadata. They are included with the app, not an add-on. You can use your own templates instead.</p></details>
+      <details><summary>Are the templates legal advice?</summary><p>No. They are starting points, not legal advice. Have a lawyer check before you sign.</p></details>
       <details><summary>Which computers does Vault Clerk run on?</summary><p>macOS 10.15 or later on Apple Silicon and Intel Macs, and Windows 10 and 11 (64-bit), in beta.</p></details>
       <details><summary>How do I get Vault Clerk?</summary><p>Vault Clerk is in an early beta. <a href="#beta">Apply for the beta</a> and we invite people in small groups; the download link is emailed to invited testers only. Beta testers get a free licence at launch. The app will be licensed to you, for good, and prices haven't been set yet.</p></details>
       <details><summary>Who makes Vault Clerk?</summary><p>Vault Clerk is made by <a href="https://cravingsofa.com/">Craving Sofa Entertainment</a>, the independent music house that also makes <a href="https://genrematch.app/">GenreMatch</a>. Follow along on X at <a href="https://x.com/VaultClerkApp" target="_blank" rel="noopener">@VaultClerkApp</a> and Instagram at <a href="https://www.instagram.com/vaultclerk/" target="_blank" rel="noopener">@VaultClerk</a>.</p></details>
@@ -754,6 +831,13 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
   })});
   pos();
 })();
+</script>
+<script>
+(function(){var t=document.querySelectorAll('.tdeal');if(!t.length)return;var say=document.querySelector('.tsay');
+function pick(b){t.forEach(function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on?'true':'false')});
+var d=b.getAttribute('data-docs').split(' ');document.querySelectorAll('.tgroup li').forEach(function(li){li.classList.toggle('hit',d.indexOf(li.getAttribute('data-doc'))>-1)});
+say.textContent=b.getAttribute('data-say')+' Plus a Quote when they ask for one.'}
+t.forEach(function(b){b.addEventListener('click',function(){pick(b)})});pick(t[0]);})();
 </script>
 </body>
 </html>
