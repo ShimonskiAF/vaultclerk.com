@@ -16,6 +16,8 @@
 - Privacy: the identity and tax drawer is never read, copied out or sent to any AI. Password lists and recovery codes are found by name only. Any AI is optional and runs locally; nothing goes to a cloud AI.
 
 - Templates: comes with 18 templates in four looks, included with the app (not an add-on): Producer Agreement, Session Player Agreement, Split Sheet, Live Performance Agreement, Rider, Stage Plot, Sync & Master Licence, Commissioned Score Agreement, Statement of Work, one-page NDA, Quote, Invoice, Delivery Receipt, Company Books, Project Expenses, Deal Brief, Project One-Pager, Project Metadata. A sync brief gets the sync licence, deal brief and one-pager; a live offer gets the performance agreement, rider, stage plot and deal brief; a collab gets the split sheet, producer agreement, NDA, deal brief and one-pager; plus a quote when asked. The templates are starting points, not legal advice.
+- Who it's for: independent artists who handle the business side without a team. It keeps contracts, splits, invoices and pitches in order, flags projects with unsigned splits before they're pitched, and builds a deal package (deal brief, quote, rights summary, audio) so you arrive at a negotiation prepared.
+- Not advice: Vault Clerk isn't a lawyer, accountant or financial adviser, and nothing in it is legal, tax or financial advice. Getting professional legal and financial advice before signing or making money decisions is still recommended.
 
 ## Not available yet
 
