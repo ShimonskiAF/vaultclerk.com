@@ -1,0 +1,4 @@
+Contact: mailto:security@vaultclerk.com
+Expires: 2027-11-09T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://vaultclerk.com/.well-known/security.txt
