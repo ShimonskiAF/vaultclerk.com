@@ -11,6 +11,7 @@
 - Ingest: suggests where each Inbox file belongs, with a short reason; spots exact duplicates and old versions; suggests clean names for bounces and stems; learns from corrections.
 - Search: inside PDF, Word, Excel and text documents. On Mac it also reads scans and photos of documents with the Mac's built-in text recognition.
 - Request: paste a sync brief, live offer or collab request; it matches the catalogue, checks rights status and builds a package with filled paperwork, audio, key art and a rights summary. It fills the user's own templates (contracts, quotes, invoices, split sheets, riders) or one of four ready-made template looks. It never emails anyone.
+- Share links: a private link at share.vaultclerk.com for one person, sent by the user. Only what the user ticks goes online (tracks, cover, EPK, press shots, credits, lyrics); the link closes when the user says, or on the date they set. Recipients can stream, leave notes at a moment in a track and ask for stems, instrumentals or clean edits; downloads are off unless allowed. DARK projects share previews only, streaming only.
 - Pitch rooms: a password-protected listening page that expires on the date the user sets, uploaded by the user to their own web host. The user chooses what people can do (listen, download, originals, stems) and see (catalogue, ISRC, writers, lyrics).
 - Projects and rights: projects are marked LIVE (clear to pitch) or DARK (unsigned splits or unreleased), with the reason. DARK projects share preview copies only, never masters.
 - Privacy: the identity and tax drawer is never read, copied out or sent to any AI. Password lists and recovery codes are found by name only. Any AI is optional and runs locally; nothing goes to a cloud AI.
@@ -21,7 +22,7 @@
 
 ## Not available yet
 
-Cloud sync or storage, hosted share links, team or shared vaults, a mobile app, sending emails or uploading for the user, audio watermarking, app-store versions, accounts and billing, a public download (downloads go to invited testers only).
+Cloud sync or storage, team or shared vaults, a mobile app, sending emails or uploading for the user, audio watermarking, app-store versions, accounts and billing, a public download (downloads go to invited testers only).
 
 ## Facts
 
