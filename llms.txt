@@ -30,6 +30,7 @@ Cloud sync or storage, team or shared vaults, a mobile app, sending emails or up
 - Licence: licensed to you, for good. Prices not set yet. Beta testers get a free licence at launch.
 - Beta: apply at https://vaultclerk.com/#beta. Testers are invited in small groups and sent the download link by email. The app isn't signed by Apple or Microsoft yet.
 - Social: X https://x.com/VaultClerkApp (@VaultClerkApp), Instagram https://www.instagram.com/vaultclerk/ (@VaultClerk).
+- Contact: hello@vaultclerk.com (general), beta@vaultclerk.com (the beta), support@vaultclerk.com (help with the app), security@vaultclerk.com (security reports), privacy@vaultclerk.com (privacy and deleting sign-up details).
 - Maker: Craving Sofa Entertainment (https://cravingsofa.com/), which also makes GenreMatch (https://genrematch.app/).
 
 ## Demo clips
