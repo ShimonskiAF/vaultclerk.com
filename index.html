@@ -73,14 +73,17 @@
         "audienceType": "Independent musicians who run their own music business"
       },
       "featureList": [
-        "Runs on your own computer; nothing is uploaded; no account or cloud",
-        "Suggests where each file in an Inbox folder belongs in your vault, with a reason, and copies it in",
+        "Runs on your own computer; local by default, and online only when you choose, per share link",
+        "Suggests where each file in an Inbox folder belongs in your vault, with a reason, and copies it in; deposit a batch or select all; filed originals move to the vault's Trash unless you keep them",
         "Never deletes anything; shows every action as a plan and waits for your yes",
         "Searches inside PDF, Word, Excel and text documents; reads scans on Mac",
         "Comes with 18 templates in four looks: producer, session player, live performance, sync and master licence, commissioned score, statement of work and one-page NDA agreements, split sheet, rider, stage plot, quote, invoice, delivery receipt, books, expenses, deal brief, one-pager and metadata. Starting points, not legal advice.",
-        "Answers a pasted brief with filled paperwork from your own templates, the right audio, key art and a rights summary",
-        "Builds password-protected pitch rooms that expire on the date you set, for you to upload to your own web host",
-        "Marks projects LIVE or DARK from the paperwork in your vault; DARK projects share preview copies only",
+        "Answers a brief (pasted text, an email file, a screenshot, a PDF or a voice note) with paperwork you fill in together, a drafted reply, the best-matching tracks with their rights status, and a link",
+        "Make a private link for one person at share.vaultclerk.com, or export a room to host on your own website; pick single tracks and what people can do and see",
+        "Marks projects LIVE, ACTIVE or DARK with the reason, and you can change it; DARK projects share preview copies only",
+        "A page for every project, a Project One-Pager in any of the four looks, and your PRO and society numbers, one row per society",
+        "Fills out any document for a project, including templates that aren't ours; never fills in a signature line. Starting points, not legal advice.",
+        "A GenreMatch tab files a master's read (genre, near misses, tempo, moods, sync uses) in the project; this tab needs the internet",
         "Identity and tax drawer is walled off and never sent to any AI; any AI is optional and runs on your computer"
       ],
       "sameAs": [
@@ -112,7 +115,7 @@
       "@type": "VideoObject",
       "@id": "https://vaultclerk.com/#demo-file",
       "name": "Vault Clerk demo: File",
-      "description": "The plan sheet: copy 7 files into the vault, then the filed list. The Inbox keeps every original.",
+      "description": "The plan sheet: copy 7 files into the vault, then the filed list.",
       "thumbnailUrl": "https://vaultclerk.com/demos/file.jpg",
       "contentUrl": "https://vaultclerk.com/demos/file.mp4",
       "uploadDate": "2026-11-09T07:50:00+11:00",
@@ -176,7 +179,7 @@
           "name": "Do my files go online?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Vault Clerk runs on your own computer and opens in your browser at a private local address. Nothing is uploaded, and the app needs no account and no cloud."
+            "text": "Only if you make a share link. Then only the files you tick go online, for that link, until you switch it off or its date passes. Everything else stays on your computer."
           }
         },
         {
@@ -184,7 +187,7 @@
           "name": "Will Vault Clerk delete or move my files?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. It copies files into your vault and your Inbox keeps every original. It never deletes anything: duplicates and junk go to a Trash folder inside your vault that only you empty. Every action is shown as a plan first, and nothing happens until you say yes."
+            "text": "It never deletes. It copies files into your vault, and only after you say yes does it move the Inbox originals to the vault's Trash (or leave them, if you choose). Only you empty the Trash. Duplicates and junk go there too. Every action is shown as a plan first, and nothing happens until you say yes."
           }
         },
         {
@@ -200,7 +203,7 @@
           "name": "Can Vault Clerk send emails or share files for me?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. It builds the package or pitch room, and you send or upload it yourself. Pitch rooms are password-protected pages that expire on the date you set, uploaded to your own web host."
+            "text": "It never emails anyone for you. It builds the package, and you send it yourself. To share audio, make a private link for one person, or export a room to host on your own website."
           }
         },
         {
@@ -568,6 +571,36 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
 .tbox-img img{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 0 0 1px #121315}
 .tbox-nav{display:flex;justify-content:space-between;padding:12px 16px}
 .tbox-nav button{min-height:44px;padding:0 18px;border-radius:22px;border:1px solid #63686F;background:linear-gradient(180deg,#3A3D42,#2B2E32);color:#F4F1EA;font:500 15px var(--sans);cursor:pointer}
+
+/* Screenshots: Request carousel and A closer look */
+.frame{display:block;background:var(--steel);border:1px solid var(--steel-line);border-radius:14px;overflow:hidden;cursor:zoom-in}
+.frame img{display:block;width:100%;height:auto}
+.shots{margin-top:40px}
+.shots-h{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.shots-h .plate{margin:0}
+.shots-h h3{font:600 30px/1.15 var(--title);margin:0}
+.shots-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;scrollbar-width:none;border-radius:14px}
+.shots-track::-webkit-scrollbar{display:none}
+.shot{flex:0 0 100%;margin:0;scroll-snap-align:start}
+.shot figcaption{margin-top:12px;font:600 22px/1.3 var(--title);color:var(--chalk)}
+.shots-nav{padding:14px 0 0;align-items:center;gap:12px}
+.shots-nav button{white-space:nowrap}
+.shots-dots{display:flex;gap:8px}
+.looks{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.looks .lk{gap:10px}
+.looks .frame{margin-bottom:6px}
+.looks .lk p{margin:0}
+.looks .lk .fine{margin-top:4px!important}
+.looks .note{font:500 13px/1.4 var(--mono);color:var(--chalk-muted);letter-spacing:.02em}
+.stages{list-style:none;margin:6px 0 4px!important;padding:0!important;display:flex;flex-direction:column;gap:14px}
+.stages li{display:flex;align-items:center;gap:14px}
+.stages .pill{min-width:92px;justify-content:center}
+.pill-sealed{border-color:var(--sealed);background:var(--sealed);color:var(--chalk)}
+.pill-steel{border-color:var(--steel-line);background:var(--steel-2);color:var(--chalk)}
+.tbox.wide{max-width:min(1200px,96vw)}
+@media (max-width:760px){.looks{grid-template-columns:1fr}.shot figcaption{font-size:19px}}
+@media (max-width:480px){.shots-nav{gap:6px}.shots-nav .shots-p,.shots-nav .shots-n{padding:0;width:44px}.shots-nav .shots-p span,.shots-nav .shots-n span{display:none}.shots-dots{gap:6px}}
+@media (prefers-reduced-motion:reduce){.shots-track{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -608,7 +641,8 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
     </div>
 
     <div class="promise">
-      <span><b>LOCAL</b> by default, nothing uploaded</span>
+      <span><b>LOCAL</b> by default</span>
+      <span><b>ONLINE</b> only when you choose, per link</span>
       <span><b>18</b> templates included</span>
       <span><b>NEVER</b> deletes anything</span>
       <span><b>MAC</b> &amp; <b>WINDOWS</b>, in beta</span>
@@ -625,7 +659,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
       <div class="rules">
         <div class="rule"><h3>MORE TIME FOR THE MUSIC</h3><p>Drop new files in your Inbox and Vault Clerk suggests where each one belongs. Paste a brief and it builds the paperwork. You check it, say yes and get back to work.</p></div>
         <div class="rule"><h3>NO FORTUNE, NO RISKY HIRES</h3><p>18 templates come with the app: agreements, split sheets, riders, quotes and invoices. It fills in your details, so you start from your own paperwork rather than whatever the other side sends.</p></div>
-        <div class="rule"><h3>PROTECT YOUR WORK</h3><p>Projects with unsigned splits are marked DARK and share preview copies only, never masters. Pitch rooms are password-protected and expire on the date you set. Your files stay on your computer.</p></div>
+        <div class="rule"><h3>PROTECT YOUR WORK</h3><p>Projects with unsigned splits are marked DARK and share preview copies only, never masters. A share link only puts online the tracks you tick, and closes when you say or on the date you set. Everything else stays on your computer.</p></div>
         <div class="rule"><h3>DON'T LEAVE MONEY BEHIND</h3><p>Split sheets, PRO and IPI numbers, quotes, invoices, books and expenses sit in one vault. Vault Clerk shows which projects still need signed splits before you pitch them.</p></div>
         <div class="rule"><h3>SHOW UP READY TO NEGOTIATE</h3><p>For a sync brief, a gig offer or a collab, Request puts the deal brief, quote, rights summary and the right audio in one package. You know what you own and what you're asking for.</p></div>
         <div class="rule"><h3>FIND ANYTHING, FAST</h3><p>Search inside your contracts, PDFs, spreadsheets and scans by the words in them, so the split sheet from three years ago is there when someone asks for it.</p></div>
@@ -650,8 +684,8 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
             <div class="tcap"><span class="plate">I</span><h3>Inbox</h3><p>Point it at a messy Inbox folder. It suggests where each file belongs in your vault, with a short reason.</p></div>
           </li>
           <li class="tstep" data-i="1">
-            <div class="screen"><video src="/demos/file.mp4" poster="/demos/file.jpg" muted loop playsinline preload="none" width="1280" height="800" aria-label="The plan sheet: copy 7 files into the vault, then the filed list. The Inbox keeps every original."></video></div>
-            <div class="tcap"><span class="plate">II</span><h3>File</h3><p>You check the plan and say yes. It copies files into your vault, and your Inbox keeps every original.</p></div>
+            <div class="screen"><video src="/demos/file.mp4" poster="/demos/file.jpg" muted loop playsinline preload="none" width="1280" height="800" aria-label="The plan sheet: copy 7 files into the vault, then the filed list."></video></div>
+            <div class="tcap"><span class="plate">II</span><h3>File</h3><p>You check the plan and say yes. It copies files into your vault. Once they're filed, the originals move to your vault's own Trash, so your Inbox is clear. Prefer to keep them? Choose that per file. Nothing is ever deleted.</p></div>
           </li>
           <li class="tstep" data-i="2">
             <div class="screen"><video src="/demos/request.mp4" poster="/demos/request.jpg" muted loop playsinline preload="none" width="1280" height="800" aria-label="Pasting a sync brief, matching the catalogue and building a package of paperwork, audio and a rights summary."></video></div>
@@ -666,6 +700,15 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
         </div>
       </div>
       <p class="fine tnote">Recorded in the beta with the sample vault that comes with the app.</p>
+      <div class="shots" id="rq-shots" role="region" aria-roledescription="carousel" aria-label="Request, step III, in three screens">
+        <div class="shots-h"><span class="plate">III</span><h3>Request, up close</h3></div>
+        <div class="shots-track" tabindex="0">
+          <figure class="shot" id="rq-shot-1" role="group" aria-roledescription="slide" aria-label="1 of 3"><a href="/screens/vc-request-read-1440.webp" class="tzoom frame" data-group="rq" data-title="Request" data-sub="1. It reads the brief." aria-label="Open screenshot 1 full size"><img src="/screens/vc-request-read-720.webp" srcset="/screens/vc-request-read-720.webp 720w, /screens/vc-request-read-1440.webp 1440w" sizes="(max-width:760px) 92vw, 1040px" width="1440" height="900" loading="lazy" decoding="async" alt="The Request screen with a sync brief pasted in and Vault Clerk reading it as a sync brief, with the app's sidebar on the left."></a><figcaption>1. It reads the brief.</figcaption></figure>
+          <figure class="shot" id="rq-shot-2" role="group" aria-roledescription="slide" aria-label="2 of 3"><a href="/screens/vc-request-fill-in-1440.webp" class="tzoom frame" data-group="rq" data-title="Request" data-sub="2. It fills the paperwork with you." aria-label="Open screenshot 2 full size"><img src="/screens/vc-request-fill-in-720.webp" srcset="/screens/vc-request-fill-in-720.webp 720w, /screens/vc-request-fill-in-1440.webp 1440w" sizes="(max-width:760px) 92vw, 1040px" width="1440" height="900" loading="lazy" decoding="async" alt="The paperwork for a sync brief, with the documents ticked and a Sync and Master Licence fill-in box pre-filled from the brief and the project."></a><figcaption>2. It fills the paperwork with you.</figcaption></figure>
+          <figure class="shot" id="rq-shot-3" role="group" aria-roledescription="slide" aria-label="3 of 3"><a href="/screens/vc-request-tracks-1440.webp" class="tzoom frame" data-group="rq" data-title="Request" data-sub="3. It picks the tracks, then you copy the reply and the link." aria-label="Open screenshot 3 full size"><img src="/screens/vc-request-tracks-720.webp" srcset="/screens/vc-request-tracks-720.webp 720w, /screens/vc-request-tracks-1440.webp 1440w" sizes="(max-width:760px) 92vw, 1040px" width="1440" height="900" loading="lazy" decoding="async" alt="The tracks picked for a brief, each with its rights status, above the Copy reply, Copy link and Build package buttons."></a><figcaption>3. It picks the tracks, then you copy the reply and the link.</figcaption></figure>
+        </div>
+        <div class="tbox-nav shots-nav"><button type="button" class="shots-p" aria-controls="rq-shots" aria-label="Previous screen">←<span> Previous</span></button><span class="shots-dots"><button type="button" class="tdot on" data-i="0" aria-label="Screen 1 of 3" aria-current="true">1</button><button type="button" class="tdot" data-i="1" aria-label="Screen 2 of 3">2</button><button type="button" class="tdot" data-i="2" aria-label="Screen 3 of 3">3</button></span><button type="button" class="shots-n" aria-controls="rq-shots" aria-label="Next screen"><span>Next </span>→</button></div>
+      </div>
     </div>
   </section>
 
@@ -712,6 +755,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
           <h3>Filing that learns how you file</h3>
           <ul>
             <li>Smart filing suggestions, each with a reason</li>
+            <li>Deposit many files at once: select a batch or select all</li>
             <li>Spots exact duplicates and old versions</li>
             <li>Suggests clean names for bounces and stems</li>
             <li>Searches inside PDF, Word, Excel and text files</li>
@@ -719,26 +763,83 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
           </ul>
         </article>
         <article class="box">
+          <span class="plate">PROJECTS</span>
+          <h3>A page for every project</h3>
+          <ul>
+            <li>See its files, rename, edit or remove them. Removed files go to a folder in the project, never deleted</li>
+            <li>Suggestions for a tidier layout, which you can ignore</li>
+            <li>Mark each project LIVE (released, clear to pitch), ACTIVE (in the making) or DARK (unreleased or splits unsigned), with the reason shown. You can change it yourself</li>
+            <li>Hide projects you're not working on from the home screen</li>
+            <li>Project One-Pager: your project's story and pitch on one page, in any of the four looks</li>
+            <li>Your PRO and society numbers, one row per society</li>
+          </ul>
+        </article>
+        <article class="box">
           <span class="plate">REQUEST</span>
           <h3>Answer a brief in one go</h3>
           <ul>
-            <li>Matches a brief to your catalogue and checks rights status</li>
+            <li>Reads more than pasted text: an email file, a screenshot, a PDF or a voice note</li>
+            <li>Ticks the documents a brief needs, then gives each one a fill-in box, pre-filled from the brief, your project and your checked details. Fees, splits and signatures are left for you</li>
+            <li>Drafts a reply and picks the best-matching tracks one by one, with the reason and each track's rights status</li>
+            <li>Makes the link, then: Copy reply, Copy link, Build package</li>
+            <li>Matches by how your songs sound, using the reads you save from GenreMatch, not only by their names</li>
             <li>Comes with 18 templates in four looks, or fills your own</li>
-            <li>Contracts, quotes, invoices, split sheets and riders</li>
-            <li>Uses your details only after you've checked them</li>
-            <li>Builds the package for you to send yourself</li>
           </ul>
+          <p class="fine">Starting points, not legal advice.</p>
         </article>
         <article class="box">
           <span class="plate">PITCH &amp; RIGHTS</span>
           <h3>Pitch what's clear to pitch</h3>
           <ul>
-            <li>Marks each project LIVE or DARK, with the reason</li>
-            <li>Password-protected pitch rooms that expire on the date you set</li>
+            <li>Make a private link for one person, or export a room to host on your own website</li>
+            <li>Private share links at share.vaultclerk.com: pick single tracks, and what they can do and see</li>
+            <li>Switch a link off and on again until its date, and hide closed links</li>
+            <li>Rooms you host yourself: pick single tracks too</li>
             <li>You choose what people can do: listen, download, originals or stems</li>
-            <li>You choose what they see: catalogue, ISRC, writers, lyrics</li>
             <li>DARK projects share preview copies only, never masters</li>
           </ul>
+        </article>
+        <article class="box">
+          <span class="plate">KITS</span>
+          <h3>Fill out any document</h3>
+          <ul>
+            <li>Any template you already use gets its own fill-in box, even ones that aren't ours</li>
+            <li>Fill out any document for a project, or create a new one in any of the four looks</li>
+            <li>It never fills in a signature line for you</li>
+          </ul>
+          <p class="fine">Starting points, not legal advice.</p>
+        </article>
+        <article class="box">
+          <span class="plate">GENREMATCH</span>
+          <h3>GenreMatch inside the app</h3>
+          <ul>
+            <li>A GenreMatch tab: send a master to GenreMatch and file its read in the project</li>
+            <li>The read: genre, near misses, tempo, moods and sync uses</li>
+          </ul>
+          <p class="fine">This tab needs the internet to load GenreMatch. Vault Clerk hands it the track on your computer and asks before saving anything.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="closer" class="band" aria-labelledby="closer-title">
+    <div class="wrap">
+      <p class="eyebrow">A CLOSER LOOK</p>
+      <h2 id="closer-title">The screens behind a brief.</h2>
+      <div class="boxes looks">
+        <article class="box lk"><a href="/screens/vc-request-fill-in-card-1440.webp" class="tzoom frame" data-group="look" data-title="Paperwork fill-in" data-sub="Fees, splits and signatures are left for you." aria-label="Open the Paperwork fill-in screenshot full size"><img src="/screens/vc-request-fill-in-card-720.webp" srcset="/screens/vc-request-fill-in-card-720.webp 720w, /screens/vc-request-fill-in-card-1440.webp 1440w" sizes="(max-width:760px) 92vw, 540px" width="1440" height="1117" loading="lazy" decoding="async" alt="The Sync and Master Licence fill-in box, with each field marked as from the brief, from the project or today's date."></a><h3>Paperwork fill-in</h3><p>It ticks the documents a brief needs and gives each one a fill-in box, pre-filled from the brief, your project and your checked details.</p><p>Fees, splits and signatures are left for you.</p><p class="fine">Starting points, not legal advice.</p></article>
+        <article class="box lk"><a href="/screens/vc-request-tracks-card-1440.webp" class="tzoom frame" data-group="look" data-title="Tracks for the pitch" data-sub="Then: Copy reply, Copy link, Build package." aria-label="Open the Tracks for the pitch screenshot full size"><img src="/screens/vc-request-tracks-card-720.webp" srcset="/screens/vc-request-tracks-card-720.webp 720w, /screens/vc-request-tracks-card-1440.webp 1440w" sizes="(max-width:760px) 92vw, 540px" width="1440" height="1117" loading="lazy" decoding="async" alt="Tracks picked for a brief, marked LIVE or DARK with an unsigned split or preview-only note, above the Copy reply, Copy link and Build package buttons."></a><h3>Tracks for the pitch</h3><p>It drafts a reply and picks the best-matching tracks one by one, with the reason and each track's rights status.</p><p>Then: Copy reply, Copy link, Build package.</p></article>
+        <article class="box lk"><a href="/screens/vc-pitch-tracks-card-1440.webp" class="tzoom frame" data-group="look" data-title="Pick single tracks" data-sub="Then choose what they can do and what they can see." aria-label="Open the Pick single tracks screenshot full size"><img src="/screens/vc-pitch-tracks-card-720.webp" srcset="/screens/vc-pitch-tracks-card-720.webp 720w, /screens/vc-pitch-tracks-card-1440.webp 1440w" sizes="(max-width:760px) 92vw, 540px" width="1440" height="1117" loading="lazy" decoding="async" alt="A list of projects opened up to show single tracks, with what people can do and see underneath."></a><h3>Pick single tracks</h3><p>Pick single tracks for a private link, or for a room you host yourself.</p><p>Then choose what they can do and what they can see.</p></article>
+        <article class="box lk"><a href="/screens/vc-kits-fill-out-card-1440.webp" class="tzoom frame" data-group="look" data-title="Smart kits" data-sub="It never fills in a signature line for you." aria-label="Open the Smart kits screenshot full size"><img src="/screens/vc-kits-fill-out-card-720.webp" srcset="/screens/vc-kits-fill-out-card-720.webp 720w, /screens/vc-kits-fill-out-card-1440.webp 1440w" sizes="(max-width:760px) 92vw, 540px" width="1440" height="1117" loading="lazy" decoding="async" alt="The Kits screen filling out a Split Sheet for the Midnight Drive project."></a><h3>Smart kits</h3><p>Any template you already use gets its own fill-in box, even ones that aren't ours. Fill out any document for a project, or create a new one in any of the four looks.</p><p>It never fills in a signature line for you.</p><p class="fine">Starting points, not legal advice.</p></article>
+        <article class="box lk"><a href="/screens/vc-your-sound-card-1440.webp" class="tzoom frame" data-group="look" data-title="GenreMatch and Your sound" data-sub="Request uses the reads you save to match briefs by how your songs sound." aria-label="Open the GenreMatch and Your sound screenshot full size"><img src="/screens/vc-your-sound-card-720.webp" srcset="/screens/vc-your-sound-card-720.webp 720w, /screens/vc-your-sound-card-1440.webp 1440w" sizes="(max-width:760px) 92vw, 540px" width="1440" height="1117" loading="lazy" decoding="async" alt="The Your sound table, listing each track's genre, tempo and moods from its GenreMatch read."></a><h3>GenreMatch and Your sound</h3><p>Send a master to GenreMatch and file its read in the project: genre, near misses, tempo, moods and sync uses.</p><p>Request uses the reads you save to match briefs by how your songs sound.</p><p class="note">Needs the internet for this tab</p></article>
+        <article class="box lk lk-stages">
+          <h3>Project stages</h3>
+          <ul class="stages">
+            <li><span class="pill">LIVE</span><span>Released and clear to pitch.</span></li>
+            <li><span class="pill pill-sealed">ACTIVE</span><span>In the making.</span></li>
+            <li><span class="pill pill-steel">DARK</span><span>Unreleased or splits unsigned. Shares previews only.</span></li>
+          </ul>
+          <p>The reason is shown with each one, and you can change it yourself.</p>
         </article>
       </div>
     </div>
@@ -748,10 +849,10 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
     <div class="wrap">
       <p class="eyebrow">YOUR FILES</p>
       <h2 id="safe-title">Nothing leaves the vault without your say-so.</h2>
-      <p class="intro">Vault Clerk runs on your own computer and opens in your browser at a private local address. The app needs no account and no cloud.</p>
+      <p class="intro">Vault Clerk runs on your own computer and opens in your browser at a private local address. Local by default, and online only when you choose, per link.</p>
       <div class="rules">
         <div class="rule"><h3>A PLAN BEFORE EVERY ACTION</h3><p>Every action is shown as a plan first, and nothing happens until you say yes.</p></div>
-        <div class="rule"><h3>NEVER DELETES</h3><p>Files are copied into your vault. Duplicates and junk go to a Trash folder inside your vault that only you empty.</p></div>
+        <div class="rule"><h3>NEVER DELETES</h3><p>Files are copied into your vault, then the Inbox originals move to your vault's Trash, unless you choose to keep them. Duplicates and junk go there too. Only you empty the Trash.</p></div>
         <div class="rule"><h3>A WALLED-OFF DRAWER</h3><p>Your identity and tax drawer is never read, never copied out and never sent to any AI. Password lists and recovery codes are found by name only.</p></div>
         <div class="rule"><h3>AI STAYS HOME</h3><p>Any AI is optional and runs on your own computer. Nothing goes to a cloud AI, and it never emails anyone for you.</p></div>
       </div>
@@ -770,10 +871,10 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;background:#14130F url
       <p class="eyebrow">QUESTIONS</p>
       <h2 id="faq-title">Frequently asked questions</h2>
       <details open><summary>What is Vault Clerk?</summary><p>Vault Clerk is a desktop app for independent musicians. It suggests where each file in a messy Inbox belongs in your vault, searches inside your documents, and answers briefs such as sync requests and live offers with filled paperwork, the right audio and a rights summary. You approve every step.</p></details>
-      <details><summary>Do my files go online?</summary><p>No. Vault Clerk runs on your own computer and opens in your browser at a private local address. Nothing is uploaded, and the app needs no account and no cloud.</p></details>
-      <details><summary>Will Vault Clerk delete or move my files?</summary><p>No. It copies files into your vault and your Inbox keeps every original. It never deletes anything: duplicates and junk go to a Trash folder inside your vault that only you empty. Every action is shown as a plan first, and nothing happens until you say yes.</p></details>
+      <details><summary>Do my files go online?</summary><p>Only if you make a share link. Then only the files you tick go online, for that link, until you switch it off or its date passes. Everything else stays on your computer.</p></details>
+      <details><summary>Will Vault Clerk delete or move my files?</summary><p>It never deletes. It copies files into your vault, and only after you say yes does it move the Inbox originals to the vault's Trash (or leave them, if you choose). Only you empty the Trash. Duplicates and junk go there too. Every action is shown as a plan first, and nothing happens until you say yes.</p></details>
       <details><summary>Does Vault Clerk use AI?</summary><p>Filing works mostly from clear rules and how you've filed before, and it learns from your corrections. A local AI model is optional and runs on your own computer. Nothing is sent to a cloud AI, and your identity and tax drawer is never sent to any AI.</p></details>
-      <details><summary>Can Vault Clerk send emails or share files for me?</summary><p>No. It builds the package or pitch room, and you send or upload it yourself. Pitch rooms are password-protected pages that expire on the date you set, uploaded to your own web host.</p></details>
+      <details><summary>Can Vault Clerk send emails or share files for me?</summary><p>It never emails anyone for you. It builds the package, and you send it yourself. To share audio, make a private link for one person, or export a room to host on your own website.</p></details>
       <details><summary>Which contract templates are included?</summary><p>18 templates come with the app, in four ready-made looks: Producer Agreement, Session Player Agreement, Split Sheet, Live Performance Agreement, Rider, Stage Plot, Sync &amp; Master Licence, Commissioned Score Agreement, Statement of Work and a one-page NDA, plus a Quote, Invoice, Delivery Receipt, Company Books, Project Expenses, Deal Brief, Project One-Pager and Project Metadata. They are included with the app, not an add-on. You can use your own templates instead.</p></details>
       <details><summary>Are the templates legal advice?</summary><p>No. They are starting points, not legal advice. Have a lawyer check before you sign.</p></details>
       <details><summary>Is Vault Clerk legal or financial advice?</summary><p>No. Vault Clerk isn't a lawyer, an accountant or a financial adviser, and nothing in the app is legal, tax or financial advice. It keeps your paperwork in order and helps you prepare. Before you sign a contract or make a money decision, we still recommend getting advice from a qualified professional.</p></details>
@@ -897,15 +998,25 @@ say.textContent=b.getAttribute('data-say')+' Plus a Quote when they ask for one.
 t.forEach(function(b){b.addEventListener('click',function(){pick(b)})});pick(t[0]);})();
 </script>
 <script>
-(function(){var d=document.getElementById('tbox');if(!d||!d.showModal)return;var a=[].slice.call(document.querySelectorAll('.tzoom')),cur=0,img=d.querySelector('.tbox-img img');
-function show(i){cur=(i+a.length)%a.length;var x=a[cur];img.src=x.getAttribute('href');img.alt=x.querySelector('img').alt;d.querySelector('#tbox-t b').textContent=x.dataset.title;d.querySelector('#tbox-t span').textContent='Issued by '+x.dataset.who+', Pierce & Pierce';d.querySelector('.tbox-img').scrollTop=0}
-a.forEach(function(x,i){x.addEventListener('click',function(e){e.preventDefault();show(i);d.showModal()})});
+(function(){var d=document.getElementById('tbox');if(!d||!d.showModal)return;var all=[].slice.call(document.querySelectorAll('.tzoom')),a=[],cur=0,last=null,img=d.querySelector('.tbox-img img');
+function grp(x){return x.dataset.group||'tpl'}
+function show(i){cur=(i+a.length)%a.length;var x=a[cur];img.src=x.getAttribute('href');img.alt=x.querySelector('img').alt;d.querySelector('#tbox-t b').textContent=x.dataset.title;d.querySelector('#tbox-t span').textContent=x.dataset.who?'Issued by '+x.dataset.who+', Pierce & Pierce':(x.dataset.sub||'');d.querySelector('.tbox-img').scrollTop=0}
+all.forEach(function(x){x.addEventListener('click',function(e){e.preventDefault();var g=grp(x);a=all.filter(function(y){return grp(y)===g});d.classList.toggle('wide',g!=='tpl');d.querySelector('.tbox-nav').hidden=a.length<2;last=x;show(a.indexOf(x));d.showModal()})});
 d.querySelector('.tbox-x').addEventListener('click',function(){d.close()});
 d.querySelector('.tbox-p').addEventListener('click',function(){show(cur-1)});
 d.querySelector('.tbox-n').addEventListener('click',function(){show(cur+1)});
 d.addEventListener('click',function(e){if(e.target===d)d.close()});
 d.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
-d.addEventListener('close',function(){a[cur].focus()});})();
+d.addEventListener('close',function(){(a[cur]||last).focus()});})();
+(function(){var r=document.getElementById('rq-shots');if(!r)return;var t=r.querySelector('.shots-track'),f=[].slice.call(t.querySelectorAll('.shot')),dots=[].slice.call(r.querySelectorAll('.shots-dots .tdot')),cur=0;
+var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function mark(i){cur=i;dots.forEach(function(d,k){d.classList.toggle('on',k===i);if(k===i)d.setAttribute('aria-current','true');else d.removeAttribute('aria-current')})}
+function go(i){i=(i+f.length)%f.length;t.scrollTo({left:f[i].offsetLeft-t.offsetLeft,behavior:still?'auto':'smooth'});mark(i)}
+r.querySelector('.shots-p').addEventListener('click',function(){go(cur-1)});
+r.querySelector('.shots-n').addEventListener('click',function(){go(cur+1)});
+dots.forEach(function(d,k){d.addEventListener('click',function(){go(k)})});
+t.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){e.preventDefault();go(cur-1)}if(e.key==='ArrowRight'){e.preventDefault();go(cur+1)}});
+var tm;t.addEventListener('scroll',function(){clearTimeout(tm);tm=setTimeout(function(){var i=Math.round(t.scrollLeft/t.clientWidth);if(i!==cur&&f[i])mark(i)},80)},{passive:true});})();
 </script>
 </body>
 </html>
