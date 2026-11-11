@@ -966,5 +966,14 @@ dots.forEach(function(d,k){d.addEventListener('click',function(){go(k)})});
 t.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){e.preventDefault();go(cur-1)}if(e.key==='ArrowRight'){e.preventDefault();go(cur+1)}});
 var tm;t.addEventListener('scroll',function(){clearTimeout(tm);tm=setTimeout(function(){var i=Math.round(t.scrollLeft/t.clientWidth);if(i!==cur&&f[i])mark(i)},80)},{passive:true});})();
 </script>
+<script>
+(function(){var v=[].slice.call(document.querySelectorAll('.step-media video'));if(!v.length)return;
+var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(still||!('IntersectionObserver' in window))return;
+v.forEach(function(x){x.muted=true;x.loop=true;x.setAttribute('muted','');x.setAttribute('loop','')});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){var x=e.target;
+if(e.isIntersecting&&e.intersectionRatio>=.5){if(x.preload!=='auto')x.preload='auto';var p=x.play();if(p&&p.catch)p.catch(function(){})}else if(!x.paused){x.pause()}})},{threshold:[0,.5]});
+v.forEach(function(x){io.observe(x)});})();
+</script>
 </body>
 </html>
