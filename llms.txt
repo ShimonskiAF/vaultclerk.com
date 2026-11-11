@@ -4,25 +4,32 @@
 
 ## What it does today
 
-- Runs on your own computer and opens in your browser at a private local address. Nothing is uploaded. The app needs no account and no cloud.
+- Runs on your own computer. Local by default: nothing goes online unless the user makes a share link, and then only the files they tick, for that link.
 - Works with the vault folder you already keep.
 - Every action is shown as a plan first; nothing happens until you say yes.
-- Never deletes anything. Files are copied into the vault and the Inbox keeps every original; duplicates and junk go to a Trash folder inside the vault that only the user empties.
-- Ingest: suggests where each Inbox file belongs, with a short reason; spots exact duplicates and old versions; suggests clean names for bounces and stems; learns from corrections.
+- Never deletes anything. Files are copied into the vault; once filed, the Inbox originals move to the vault's own Trash, or stay put if the user chooses that per file. Duplicates and junk go there too. Only the user empties the Trash.
+- Ingest: deposit many files at once (select a batch or select all); suggests where each Inbox file belongs, with a short reason; spots exact duplicates and old versions; suggests clean names for bounces and stems; learns from corrections.
 - Search: inside PDF, Word, Excel and text documents. On Mac it also reads scans and photos of documents with the Mac's built-in text recognition.
-- Request: paste a sync brief, live offer or collab request; it matches the catalogue, checks rights status and builds a package with filled paperwork, audio, key art and a rights summary. It fills the user's own templates (contracts, quotes, invoices, split sheets, riders) or one of four ready-made template looks. It never emails anyone.
-- Share links: a private link at share.vaultclerk.com for one person, sent by the user. Only what the user ticks goes online (tracks, cover, EPK, press shots, credits, lyrics); the link closes when the user says, or on the date they set. Recipients can stream, leave notes at a moment in a track and ask for stems, instrumentals or clean edits; downloads are off unless allowed. DARK projects share previews only, streaming only.
-- Pitch rooms: a password-protected listening page that expires on the date the user sets, uploaded by the user to their own web host. The user chooses what people can do (listen, download, originals, stems) and see (catalogue, ISRC, writers, lyrics).
-- Projects and rights: projects are marked LIVE (clear to pitch) or DARK (unsigned splits or unreleased), with the reason. DARK projects share preview copies only, never masters.
+- Request: reads a pasted brief, an email file, a screenshot, a PDF or a voice note (a sync brief, live offer or collab request). It ticks the documents the brief needs and gives each a fill-in box, pre-filled from the brief, the project and the user's checked details; fees, splits and signatures are left for the user. It drafts a reply, picks the best-matching tracks one by one (with the reason and each track's rights status), makes the link, then offers Copy reply, Copy link and Build package. It matches by how songs sound, using saved GenreMatch reads, not only by their names. It fills the user's own templates (contracts, quotes, invoices, split sheets, riders) or one of four ready-made template looks. It never emails anyone.
+- Share links: a private link at share.vaultclerk.com for one person, sent by the user. Only what the user ticks goes online (tracks, cover, EPK, press shots, credits, lyrics); the link closes when the user says, or on the date they set. The user picks single tracks and what people can do and see, can switch a link off and on again until its date, and can hide closed links. Recipients can stream, leave notes at a moment in a track and ask for stems, instrumentals or clean edits; downloads are off unless allowed. DARK projects share previews only, streaming only.
+- Rooms you host yourself: export a password-protected listening page that expires on the date the user sets, to host on their own website, picking single tracks too. The user chooses what people can do (listen, download, originals, stems) and see (catalogue, ISRC, writers, lyrics).
+- Projects and rights: each project is marked LIVE (released, clear to pitch), ACTIVE (in the making) or DARK (unreleased or splits unsigned), with the reason shown; the user can change it. DARK projects share preview copies only, never masters. Every project has a page to see, rename, edit or remove its files (removed files go to a folder in the project, never deleted), with layout suggestions the user can ignore. Projects can be hidden from the home screen. A Project One-Pager puts the story and pitch on one page in any of the four looks. PRO and society numbers are kept one row per society.
+- Kits: any template the user already uses gets its own fill-in box, even ones that aren't Vault Clerk's. Fill out any document for a project, or create a new one in any of the four looks. It never fills in a signature line. Starting points, not legal advice.
+- GenreMatch tab: send a master to GenreMatch and file its read (genre, near misses, tempo, moods, sync uses) in the project. This tab needs the internet to load GenreMatch; Vault Clerk hands it the track on the user's computer and asks before saving anything.
+- Directory: the user's own contacts (imported from Apple or Google Contacts, or saved from a brief) stay on their computer and are never uploaded, sent to any AI or put in a share link. Plus a built-in starting list of venues in Sydney and Los Angeles and of radio, sync companies, ticketing and listing platforms, studios, tools and guides, each taken from the place's own website with the date it was checked. Nobody pays to be listed. Works offline.
 - Privacy: the identity and tax drawer is never read, copied out or sent to any AI. Password lists and recovery codes are found by name only. Any AI is optional and runs locally; nothing goes to a cloud AI.
 
 - Templates: comes with 18 templates in four looks, included with the app (not an add-on): Producer Agreement, Session Player Agreement, Split Sheet, Live Performance Agreement, Rider, Stage Plot, Sync & Master Licence, Commissioned Score Agreement, Statement of Work, one-page NDA, Quote, Invoice, Delivery Receipt, Company Books, Project Expenses, Deal Brief, Project One-Pager, Project Metadata. A sync brief gets the sync licence, deal brief and one-pager; a live offer gets the performance agreement, rider, stage plot and deal brief; a collab gets the split sheet, producer agreement, NDA, deal brief and one-pager; plus a quote when asked. The templates are starting points, not legal advice.
 - Who it's for: independent artists who handle the business side without a team. It keeps contracts, splits, invoices and pitches in order, flags projects with unsigned splits before they're pitched, and builds a deal package (deal brief, quote, rights summary, audio) so you arrive at a negotiation prepared.
 - Not advice: Vault Clerk isn't a lawyer, accountant or financial adviser, and nothing in it is legal, tax or financial advice. Getting professional legal and financial advice before signing or making money decisions is still recommended.
 
+## In development (designs, not finished features)
+
+A calendar read from the paperwork in the vault (show times, invoice due dates, licence deadlines, and a release plan counted back from release day), and a one-page link-in-bio artist site built from the vault. Both are designs and will change.
+
 ## Not available yet
 
-Cloud sync or storage, team or shared vaults, a mobile app, sending emails or uploading for the user, audio watermarking, app-store versions, accounts and billing, a public download (downloads go to invited testers only).
+Cloud sync or storage, team or shared vaults, a mobile app, sending emails for the user, audio watermarking, app-store versions, accounts and billing, a public download (downloads go to invited testers only).
 
 ## Facts
 
