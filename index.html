@@ -84,7 +84,7 @@
         "A page for every project, a Project One-Pager in any of the four looks, and your PRO and society numbers, one row per society",
         "A Directory built into the app: your own contacts, kept on your computer, plus venues in Sydney and Los Angeles and places to pitch, play and get paid, each from its own website with the date it was checked",
         "Fills out any document for a project, including templates that aren't ours; never fills in a signature line. Starting points, not legal advice.",
-        "A GenreMatch tab files a master's read (genre, near misses, tempo, moods, sync uses) in the project; this tab needs the internet",
+        "A GenreMatch tab reads a master you pick (genre shelf and reasons, near misses, tempo, sync notes) and, after you say yes, files the read in the project's GenreMatch folder and under Your sound; the tab needs the internet and receives only the track and its project name",
         "Identity and tax drawer is walled off and never sent to any AI; any AI is optional and runs on your computer"
       ],
       "sameAs": [
@@ -181,6 +181,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Only if you make a share link. Then only the files you tick go online, for that link, until you switch it off or its date passes. Everything else stays on your computer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does GenreMatch upload my music?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vault Clerk doesn't upload it. It hands the track you pick to the GenreMatch tab on your computer, and GenreMatch reads it there. The tab needs the internet to load, and nothing is saved to your vault until you say yes."
           }
         },
         {
@@ -631,7 +639,7 @@ section.bare>.wrap{background:none!important;border:0!important;box-shadow:none!
 .step-text ul{margin:0;padding-left:18px;color:var(--chalk);font-size:15.5px;line-height:1.65}
 .step-text li{margin-bottom:4px}
 #how .shots{margin-top:48px;max-width:1100px;margin-left:auto;margin-right:auto}
-.also{margin-top:40px;padding-top:24px;border-top:1px solid var(--steel-line);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.also{margin-top:40px;padding-top:24px;border-top:1px solid var(--steel-line);display:grid;grid-template-columns:1fr;gap:24px}
 .also p{margin:0;color:var(--chalk);font-size:15.5px}.also b{color:var(--gold);font-weight:600}
 .fogband>.wrap{background:#F6F7F5!important;border:1px solid #C5CBD1!important;box-shadow:0 12px 32px rgba(0,0,0,.35)!important;color:#1E1C18}
 .fogband h2{color:#1E1C18}
@@ -654,6 +662,17 @@ section.bare>.wrap{background:none!important;border:0!important;box-shadow:none!
 #works .fine{margin-top:16px!important;color:var(--chalk-muted)}
 @media (max-width:1100px){.step,.step.flip{grid-template-columns:1fr;gap:20px}.step.flip .step-media{order:0}.rules.three{grid-template-columns:1fr}}
 @media (max-width:760px){.hero-grid{grid-template-columns:1fr!important}.hero-shot{order:2}.also,.dir-shots,.works,.work-shots{grid-template-columns:1fr}section.bare>.wrap{padding:32px 16px 16px!important}}
+/* GenreMatch */
+#genrematch>.wrap{max-width:1360px}
+.gm-grid{display:grid;grid-template-columns:minmax(0,820fr) minmax(0,400fr);gap:44px;align-items:start}
+.gm-media{display:flex;flex-direction:column;gap:16px}
+.gm-media .gm-second{width:62%;align-self:flex-end}
+.gm-text .intro{margin-bottom:28px}
+.gm-points{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:20px}
+.gm-points li{color:var(--chalk);font-size:16px;line-height:1.6}
+.gm-points b{display:block;margin-bottom:4px;font:600 13.5px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.gm-note{font:400 14px/1.6 var(--mono);color:var(--chalk-muted);margin:0 0 24px}
+@media (max-width:760px){.gm-grid{grid-template-columns:1fr;gap:28px}.gm-text{order:-1}.gm-media .gm-second{width:100%}}
 </style>
 </head>
 <body>
@@ -751,7 +770,6 @@ section.bare>.wrap{background:none!important;border:0!important;box-shadow:none!
       <p class="fine tnote">Recorded with the sample vault that comes with the app.</p>
       <div class="also">
         <p><b>Kits:</b> any template you already use gets its own fill-in box. It never fills in a signature line.</p>
-        <p><b>GenreMatch tab:</b> send a master to GenreMatch and file its read in the project. Needs the internet for this tab.</p>
       </div>
     </div>
   </section>
@@ -771,6 +789,29 @@ section.bare>.wrap{background:none!important;border:0!important;box-shadow:none!
         <a href="/screens/vc-directory-sync-1440.webp" class="tzoom frame" data-group="dir" data-title="Directory" data-sub="Sync companies, with their published terms." aria-label="Open the Directory screenshot full size"><img src="/screens/vc-directory-sync-720.webp" srcset="/screens/vc-directory-sync-720.webp 720w, /screens/vc-directory-sync-1440.webp 1440w" sizes="(max-width:760px) 92vw, 500px" width="1440" height="900" loading="lazy" decoding="async" alt="Vault Clerk's Directory section tabs with Sync open, showing how to get in and the terms as published."></a>
       </div>
       <p class="fine">Every listing comes from the place's own website and shows the date we checked it. Nobody pays to be listed. Details change, so check before you pitch. Not legal or financial advice.</p>
+    </div>
+  </section>
+
+  <section id="genrematch" aria-labelledby="gm-title">
+    <div class="wrap">
+      <div class="gm-grid">
+        <div class="gm-media">
+          <a href="/screens/vc-genrematch-read-1440.webp" class="tzoom frame" data-group="gm" data-title="GenreMatch tab" data-sub="A read for a demo track, with its genre shelf and tempo." aria-label="Open the GenreMatch tab screenshot full size"><img src="/screens/vc-genrematch-read-720.webp" srcset="/screens/vc-genrematch-read-720.webp 720w, /screens/vc-genrematch-read-1440.webp 1440w" sizes="(max-width:760px) 92vw, (max-width:1100px) 60vw, 820px" width="1440" height="935" loading="lazy" decoding="async" alt="Vault Clerk's GenreMatch tab showing a finished read for a track, with its genre shelf, tempo and the reasons for it."></a>
+          <a href="/screens/vc-your-sound-1440.webp" class="tzoom frame gm-second" data-group="gm" data-title="Your sound" data-sub="Every saved read, listed with its project." aria-label="Open the Your sound screenshot full size"><img src="/screens/vc-your-sound-720.webp" srcset="/screens/vc-your-sound-720.webp 720w, /screens/vc-your-sound-1440.webp 1440w" sizes="(max-width:760px) 92vw, 520px" width="1440" height="590" loading="lazy" decoding="async" alt="Vault Clerk's Your sound list, showing each saved GenreMatch read with its genre and tempo."></a>
+        </div>
+        <div class="gm-text">
+          <p class="eyebrow">GENREMATCH</p>
+          <h2 id="gm-title">Where your song finds its crate.</h2>
+          <p class="intro">GenreMatch is our genre-reading tool. Inside Vault Clerk it reads the masters you pick and files what it hears with the project, so you can pitch by how your songs sound.</p>
+          <ul class="gm-points">
+            <li><b>Send a master, get a read</b>Pick a master in the GenreMatch tab. The read comes back with a genre shelf and the reasons for it, the near misses, the tempo, and sync notes such as moods, energy and the scenes it suits.</li>
+            <li><b>Filed with the project</b>After you say yes, the read is saved in the project's GenreMatch folder as a card you can open, and listed under Your sound. Remove one any time; it goes to your vault's Trash.</li>
+            <li><b>Briefs matched by sound</b>When a brief asks for a mood or a genre, Request uses your saved reads to suggest tracks, not just their titles.</li>
+          </ul>
+          <p class="gm-note">This tab needs the internet to load GenreMatch. Vault Clerk hands it the track you pick and its project name, nothing else, and asks before saving anything. A read is an estimate of how a song sounds, not a fact about it.</p>
+          <a class="btn btn-line" href="https://genrematch.app" target="_blank" rel="noopener">Try GenreMatch</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -860,6 +901,7 @@ section.bare>.wrap{background:none!important;border:0!important;box-shadow:none!
       <h2 id="faq-title">Frequently asked questions</h2>
       <details><summary>What is Vault Clerk?</summary><p>Vault Clerk is a desktop app for independent musicians. It suggests where each file in a messy Inbox belongs in your vault, searches inside your documents, and answers briefs such as sync requests and live offers with filled paperwork, the right audio and a rights summary. You approve every step.</p></details>
       <details><summary>Do my files go online?</summary><p>Only if you make a share link. Then only the files you tick go online, for that link, until you switch it off or its date passes. Everything else stays on your computer.</p></details>
+      <details><summary>Does GenreMatch upload my music?</summary><p>Vault Clerk doesn't upload it. It hands the track you pick to the GenreMatch tab on your computer, and GenreMatch reads it there. The tab needs the internet to load, and nothing is saved to your vault until you say yes.</p></details>
       <details><summary>Will Vault Clerk delete or move my files?</summary><p>It never deletes. It copies files into your vault, and only after you say yes does it move the Inbox originals to the vault's Trash (or leave them, if you choose). Only you empty the Trash. Duplicates and junk go there too.</p></details>
       <details><summary>Does Vault Clerk use AI?</summary><p>Filing works mostly from clear rules and how you've filed before, and it learns from your corrections. A local AI model is optional and runs on your own computer. Nothing is sent to a cloud AI, and your identity and tax drawer is never sent to any AI.</p></details>
       <details><summary>Can Vault Clerk send emails or share files for me?</summary><p>It never emails anyone for you. It builds the package, and you send it yourself. To share audio, make a private link for one person, or export a room to host on your own website.</p></details>
