@@ -914,15 +914,15 @@ html[data-dys] :is(.tcap h3,.step-text h3,.shots-h h3,.tlooks-h,.work h3){font-s
       <h2 id="how-title">From a messy Inbox to a vault you can find things in.</h2>
       <p class="intro">Independent musicians run a small business out of downloads, email attachments and desktop folders. Vault Clerk works like the clerk at a bank vault: it takes what you hand over, puts it in the right box, and brings back what you need when a request comes in.</p>
       <div class="step">
-        <div class="step-media"><video src="/demos/inbox.mp4" poster="/demos/inbox.jpg" controls muted playsinline preload="none" width="1280" height="800" aria-label="Reading the Inbox and suggesting where each file belongs, with a reason, then ticking a few files."></video></div>
+        <div class="step-media"><video src="/demos/inbox.mp4" data-poster="/demos/inbox.jpg" controls muted playsinline preload="none" width="1280" height="800" aria-label="Reading the Inbox and suggesting where each file belongs, with a reason, then ticking a few files."></video></div>
         <div class="step-text"><span class="plate">I</span><h3>Inbox</h3><p>Point it at a messy Inbox folder. It suggests where each file belongs in your vault, with a short reason.</p><ul><li>Smart filing suggestions, each with a reason</li><li>Deposit a batch, or select all</li><li>Spots duplicates and old versions</li><li>Suggests clean names for bounces and stems</li><li>Reads scans and photos of documents on Mac</li></ul></div>
       </div>
       <div class="step flip">
-        <div class="step-media"><video src="/demos/file.mp4" poster="/demos/file.jpg" controls muted playsinline preload="none" width="1280" height="800" aria-label="Filing: the Here's what I'll do sheet, a yes, and the originals moved to the vault's Trash."></video></div>
+        <div class="step-media"><video src="/demos/file.mp4" data-poster="/demos/file.jpg" controls muted playsinline preload="none" width="1280" height="800" aria-label="Filing: the Here's what I'll do sheet, a yes, and the originals moved to the vault's Trash."></video></div>
         <div class="step-text"><span class="plate">II</span><h3>File</h3><p>You check the plan and say yes. It copies files into your vault.</p><ul><li>Then the Inbox originals move to your vault's Trash, unless you keep them</li><li>Nothing is ever deleted</li><li>A page for every project</li><li>Mark each project LIVE, ACTIVE or DARK, with the reason shown</li></ul></div>
       </div>
       <div class="step">
-        <div class="step-media"><video src="/demos/request.mp4" poster="/demos/request.jpg" controls muted playsinline preload="none" width="1280" height="800" aria-label="Reading a sync brief, the pre-filled Sync and Master Licence, then the tracks and the Copy reply, Copy link and Build package buttons."></video></div>
+        <div class="step-media"><video src="/demos/request.mp4" data-poster="/demos/request.jpg" controls muted playsinline preload="none" width="1280" height="800" aria-label="Reading a sync brief, the pre-filled Sync and Master Licence, then the tracks and the Copy reply, Copy link and Build package buttons."></video></div>
         <div class="step-text"><span class="plate">III</span><h3>Request</h3><p>Paste a sync brief, live offer or collab request. It builds the package: filled paperwork, the right audio and a rights summary.</p><ul><li>Reads an email file, screenshot, PDF or voice note</li><li>Ticks the paperwork a brief needs and pre-fills it from the brief, your project and your checked details. Fees, splits and signatures are left for you</li><li>Drafts a reply and picks tracks, with each one's rights status</li><li>Matches by how your songs sound, using GenreMatch reads you save</li></ul></div>
       </div>
       <div class="shots" id="rq-shots" role="region" aria-roledescription="carousel" aria-label="Request, up close, in three screens">
@@ -935,7 +935,7 @@ html[data-dys] :is(.tcap h3,.step-text h3,.shots-h h3,.tlooks-h,.work h3){font-s
         <div class="tbox-nav shots-nav"><button type="button" class="shots-p" aria-controls="rq-shots" aria-label="Previous screen">←<span> Previous</span></button><span class="shots-dots"><button type="button" class="tdot on" data-i="0" aria-label="Screen 1 of 3" aria-current="true">1</button><button type="button" class="tdot" data-i="1" aria-label="Screen 2 of 3">2</button><button type="button" class="tdot" data-i="2" aria-label="Screen 3 of 3">3</button></span><button type="button" class="shots-n" aria-controls="rq-shots" aria-label="Next screen"><span>Next </span>→</button></div>
       </div>
       <div class="step flip">
-        <div class="step-media"><video src="/demos/pitch.mp4" poster="/demos/pitch.jpg" controls muted playsinline preload="none" width="1280" height="800" aria-label="Making a private share link for one person: picking tracks, choosing what they can do, and making the link."></video></div>
+        <div class="step-media"><video src="/demos/pitch.mp4" data-poster="/demos/pitch.jpg" controls muted playsinline preload="none" width="1280" height="800" aria-label="Making a private share link for one person: picking tracks, choosing what they can do, and making the link."></video></div>
         <div class="step-text"><span class="plate">IV</span><h3>Pitch</h3><p>Make a private link for one person at share.vaultclerk.com, and send it yourself. Only what you tick goes online. The link closes when you say, or on the date you set.</p><ul><li>A private link for one person, or a room you host on your own website</li><li>Pick single tracks and what they can do and see</li><li>Switch a link off and on until its date</li><li>DARK projects share previews only</li></ul></div>
       </div>
       <p class="fine tnote">Recorded with the sample vault that comes with the app.</p>
@@ -1247,12 +1247,23 @@ var tm;t.addEventListener('scroll',function(){clearTimeout(tm);tm=setTimeout(fun
 (function(){var h=document.documentElement,d=document.getElementById('view-panel'),b=document.getElementById('view-btn');if(!d||!b)return;
 function get(){return{theme:h.getAttribute('data-theme')||'dark',calm:h.hasAttribute('data-calm'),dys:h.hasAttribute('data-dys')}}
 function save(v){try{localStorage.setItem('vc-view',JSON.stringify(v))}catch(e){}}
+var MEDIA=['vc-request-read','vc-request-fill-in','vc-request-tracks','vc-directory-venues','vc-directory-sync','vc-genrematch-read','vc-your-sound','vc-calendar-month','vc-calendar-release','vc-linkinbio-builder','vc-linkinbio-desktop'];
+var RX=/\/screens\/(vc-[a-z-]+?)(?:--(?:light|contrast))?-(720|1440)\.webp/g;
+function swapUrl(u,sfx){return u.replace(RX,function(m,n,w){return MEDIA.indexOf(n)<0?m:'/screens/'+n+sfx+'-'+w+'.webp'})}
+function media(){var t=h.getAttribute('data-theme'),sfx=(t==='light'||t==='contrast')?'--'+t:'';
+[].forEach.call(document.querySelectorAll('img[src^="/screens/"]'),function(i){if(i.closest('#view'))return;
+ var a=i.getAttribute('src'),b=swapUrl(a,sfx);if(a!==b){var ss=i.getAttribute('srcset');if(ss)i.setAttribute('srcset',swapUrl(ss,sfx));i.setAttribute('src',b)}});
+[].forEach.call(document.querySelectorAll('a.tzoom[href^="/screens/"]'),function(a){if(a.closest('#view'))return;a.setAttribute('href',swapUrl(a.getAttribute('href'),sfx))});
+[].forEach.call(document.querySelectorAll('.step-media video'),function(v){var a=v.getAttribute('src'),m=a.match(/\/demos\/([a-z]+)(?:--[a-z]+)?\.mp4/);if(!m)return;
+ var b='/demos/'+m[1]+sfx+'.mp4',ps='/demos/'+m[1]+sfx+'.jpg';if(v.getAttribute('poster')!==ps)v.setAttribute('poster',ps);if(a===b)return;var was=!v.paused;v.setAttribute('src',b);
+ if(was){var q=v.play();if(q&&q.catch)q.catch(function(){})}})}
+media();
 function paint(){var v=get();[].forEach.call(d.querySelectorAll('.vp-chip'),function(c){c.setAttribute('aria-pressed',String(c.getAttribute('data-set-theme')===v.theme))});
 [['vp-calm','Calm mode',v.calm],['vp-dys','Dyslexia-friendly font',v.dys]].forEach(function(x){var e=document.getElementById(x[0]);e.setAttribute('aria-checked',String(x[2]));e.textContent=x[1]+': '+(x[2]?'On':'Off')})}
 function set(k,val){var v=get();v[k]=val;if(v.theme==='dark')h.removeAttribute('data-theme');else h.setAttribute('data-theme',v.theme);
 ['calm','dys'].forEach(function(n){if(v[n])h.setAttribute('data-'+n,'');else h.removeAttribute('data-'+n)});
 if(v.calm)[].forEach.call(document.querySelectorAll('.step-media video'),function(x){x.pause()});
-save(v);paint()}
+save(v);paint();media()}
 [].forEach.call(d.querySelectorAll('.vp-chip'),function(c){c.addEventListener('click',function(){set('theme',c.getAttribute('data-set-theme'))})});
 document.getElementById('vp-calm').addEventListener('click',function(){set('calm',!get().calm)});
 document.getElementById('vp-dys').addEventListener('click',function(){set('dys',!get().dys)});
