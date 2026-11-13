@@ -707,9 +707,9 @@ section.bare>.wrap{background:none!important;border:0!important;box-shadow:none!
 .top-r{display:flex;align-items:center;gap:20px;min-width:0}
 .view-btn{min-height:40px;padding:0 16px;border-radius:20px;border:1px solid #4A4E54;background:linear-gradient(180deg,#2E3135,#222428);color:#F4F1EA;font:600 14px/1 var(--sans);cursor:pointer;flex:0 0 auto}
 .view-btn:hover{border-color:#B8935A}
-.vpanel{padding:0;border:0;background:transparent;width:min(420px,calc(100vw - 32px));max-height:calc(100vh - 32px);margin:84px 24px auto auto;color:#F4F1EA}
+.vpanel{padding:0;border:0;background:transparent;width:min(420px,calc(100vw - 32px));max-height:calc(100vh - 32px);margin:84px 24px auto auto;color:#F4F1EA;border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.6)}
 .vpanel::backdrop{background:rgba(8,9,10,.5)}
-.vp-in{border-radius:22px;padding:22px 24px 24px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,rgba(255,255,255,0) 1px 3px),linear-gradient(180deg,#464A50 0%,#2B2E32 100%);border:1px solid #63686F;box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 24px 60px rgba(0,0,0,.6);max-height:calc(100vh - 32px);overflow:auto}
+.vp-in{border-radius:22px;padding:22px 24px 24px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,rgba(255,255,255,0) 1px 3px),linear-gradient(180deg,#464A50 0%,#2B2E32 100%);border:1px solid #63686F;box-shadow:inset 0 1px 0 rgba(255,255,255,.2);max-height:calc(100vh - 32px);overflow:auto}
 .vp-h{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .vp-h h2{font:600 30px/1.1 var(--title);margin:0;color:#F4F1EA}
 .vp-sub{margin:8px 0 0;color:#DCD6C9;font-size:15px;line-height:1.5}
@@ -772,6 +772,8 @@ html[data-theme=light] .chips input,html[data-theme=light] .consent input{accent
 html[data-theme=light] footer{background:#F6F7F5;border-top-color:#C5CBD1;color:#5F5A50}
 html[data-theme=light] .fogband>.wrap{background:#FFFFFF!important;box-shadow:inset 0 1px 0 #FFFFFF,0 10px 24px rgba(0,0,0,.10)!important}
 html[data-theme=light] :is(.tbox-in,.vp-in){background:linear-gradient(180deg,#F6F7F5,#E9EBE9);border-color:#C5CBD1;box-shadow:inset 0 1px 0 #FFFFFF,0 24px 60px rgba(0,0,0,.24)}
+html[data-theme=light] .vp-in{box-shadow:inset 0 1px 0 #FFFFFF}
+html[data-theme=light] .vpanel{box-shadow:0 24px 60px rgba(0,0,0,.24)}
 html[data-theme=light] :is(.tbox-h span,.vp-sub,.vp-help){color:#5F5A50}
 html[data-theme=light] :is(.tbox,.vpanel){color:#1E1C18}
 html[data-theme=light] :is(.tbox,.vpanel)::backdrop{background:rgba(223,225,224,.72)}
@@ -829,14 +831,14 @@ html[data-calm] .tlook a.tzoom:hover img{transform:none}
 html[data-calm] .section-bare{background:none}
 
 /* ---------- DYSLEXIA-FRIENDLY FONT (with any look) ---------- */
-html[data-dys] body,html[data-dys] :is(h1,h2,h3,p,li,a,button,summary,label,legend,input,textarea,figcaption,span,b,.eyebrow,.pill,.plate,.tdot,.tq,.gm-points b,.gm-note,.view-pair figcaption,.tbox-h b,.vp-sec,.vp-h h2,.rule h3,.advice h3,.plan,.plan .h,.tlook figcaption){font-family:"OpenDyslexic",var(--sans)!important;letter-spacing:.05em!important;word-spacing:.16em}
-html[data-dys] .brand .wm{font-family:var(--display)!important;letter-spacing:.18em!important;word-spacing:normal}
-html[data-dys] body{line-height:1.75}
+html[data-dys] body,html[data-dys] :is(h1,h2,h3,p,li,a,button,summary,label,legend,input,textarea,figcaption,span,b,.eyebrow,.pill,.plate,.tdot,.tq,.gm-points b,.gm-note,.view-pair figcaption,.tbox-h b,.vp-sec,.vp-h h2,.rule h3,.advice h3,.plan,.plan .h,.tlook figcaption):not(.brand):not(.wm){font-family:"OpenDyslexic",var(--sans)!important;letter-spacing:.03em!important;word-spacing:.12em}
+html[data-dys] .brand,html[data-dys] .brand .wm{font-family:var(--display)!important;letter-spacing:.18em!important;word-spacing:normal}
+html[data-dys] body{line-height:1.6}
 html[data-dys] .brand .wm{white-space:nowrap}
 html[data-dys] .top nav{gap:16px}
 @media (max-width:1100px){html[data-dys] .top nav a:not(:last-child){display:none}}
 html[data-dys] .top nav a{font-size:13px;letter-spacing:0!important;word-spacing:.05em;white-space:nowrap}
-html[data-dys] :is(h1,h2,h3,summary,.vp-h h2){letter-spacing:.02em!important;word-spacing:.1em}
+html[data-dys] :is(h1,h2,h3,summary,.vp-h h2){letter-spacing:.02em!important;word-spacing:.08em}
 html[data-dys] :is(h1,h2){line-height:1.2!important}
 html[data-dys] h1{font-size:clamp(30px,3.8vw,48px)!important}
 html[data-dys] h2{font-size:clamp(28px,3.4vw,40px)!important}
