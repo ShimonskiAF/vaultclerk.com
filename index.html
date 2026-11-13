@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){var h=document.documentElement,v={};try{v=JSON.parse(localStorage.getItem('vc-view')||'{}')||{}}catch(e){}
+var t=v.theme||(window.matchMedia&&matchMedia('(prefers-contrast: more)').matches?'contrast':'dark');
+if(t==='light'||t==='contrast')h.setAttribute('data-theme',t);if(v.calm)h.setAttribute('data-calm','');if(v.dys)h.setAttribute('data-dys','');})();</script>
 <title>Vault Clerk — the local-first file clerk for independent musicians</title>
 <meta name="description" content="Vault Clerk is a local-first filing and pitch app for independent musicians. It stays on your computer, runs on Mac and Windows, and is available in beta.">
 <link rel="canonical" href="https://vaultclerk.com/">
@@ -263,7 +266,7 @@
           "name": "Can I change how it looks?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. The View button in the sidebar switches between Dark, Light and High contrast, and turns on Calm mode or a dyslexia-friendly font. It changes only how the app looks, never your files."
+            "text": "Yes. The View button in the sidebar switches between Dark, Light and High contrast, and turns on Calm mode or a dyslexia-friendly font. It changes only how the app looks, never your files. This website has the same View button at the top of the page."
           }
         },
         {
@@ -693,6 +696,151 @@ section.bare>.wrap{background:none!important;border:0!important;box-shadow:none!
 .fogband .gm-points b{color:#7A5C2B}
 .view-line{margin:0;font-size:16px;line-height:1.6}
 @media (max-width:760px){.view-pair{grid-template-columns:1fr}}
+/* ===== View: Dark (as always), Light, High contrast, Calm mode, dyslexia-friendly font =====
+   Each rule hangs off an attribute on <html>: data-theme (light|contrast), data-calm, data-dys.
+   With none of them set the page is exactly as before. */
+@font-face{font-family:"OpenDyslexic";src:url(/fonts/OpenDyslexic-Regular.woff) format("woff");font-weight:400;font-display:swap}
+@font-face{font-family:"OpenDyslexic";src:url(/fonts/OpenDyslexic-Bold.woff) format("woff");font-weight:600 700;font-display:swap}
+
+/* the View button and panel */
+.top{flex-wrap:nowrap}
+.top-r{display:flex;align-items:center;gap:20px;min-width:0}
+.view-btn{min-height:40px;padding:0 16px;border-radius:20px;border:1px solid #4A4E54;background:linear-gradient(180deg,#2E3135,#222428);color:#F4F1EA;font:600 14px/1 var(--sans);cursor:pointer;flex:0 0 auto}
+.view-btn:hover{border-color:#B8935A}
+.vpanel{padding:0;border:0;background:transparent;width:min(420px,calc(100vw - 32px));max-height:calc(100vh - 32px);margin:84px 24px auto auto;color:#F4F1EA}
+.vpanel::backdrop{background:rgba(8,9,10,.5)}
+.vp-in{border-radius:22px;padding:22px 24px 24px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,rgba(255,255,255,0) 1px 3px),linear-gradient(180deg,#464A50 0%,#2B2E32 100%);border:1px solid #63686F;box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 24px 60px rgba(0,0,0,.6);max-height:calc(100vh - 32px);overflow:auto}
+.vp-h{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.vp-h h2{font:600 30px/1.1 var(--title);margin:0;color:#F4F1EA}
+.vp-sub{margin:8px 0 0;color:#DCD6C9;font-size:15px;line-height:1.5}
+.vp-sec{font:600 13.5px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#E2C07F;margin:20px 0 10px}
+.vp-chips{display:flex;flex-wrap:wrap;gap:8px}
+.vp-chip,.vp-toggle{min-height:44px;padding:0 18px;border-radius:22px;border:1px solid #8E9198;background:linear-gradient(180deg,#2E3135,#222428);color:#F4F1EA;font:500 15px/1.2 var(--sans);cursor:pointer}
+.vp-chip[aria-pressed=true]{background:linear-gradient(180deg,#E2C07F,#C9A35E);border-color:#A9844C;color:#121315;font-weight:600}
+.vp-chip[aria-pressed=true]::before,.vp-toggle[aria-checked=true]::before{content:"\2713\00a0";font-weight:700}
+.vp-toggle{display:flex;align-items:center;width:100%;margin-top:18px;text-align:left}
+.vp-toggle[aria-checked=true]{border-color:#C9A35E;background:linear-gradient(rgba(169,132,76,.18),rgba(169,132,76,.18)),linear-gradient(180deg,#2E3135,#222428)}
+.vp-help{margin:6px 4px 0;color:#DCD6C9;font-size:14px;line-height:1.5}
+@media (max-width:760px){.vpanel{margin:auto}.top-r{gap:12px}}
+.brand .wm,.top nav a{white-space:nowrap}
+@media (max-width:440px){.top nav{display:none}}
+@media (max-width:560px){.top nav a:last-child{font-size:14px}}
+
+/* ---------- LIGHT: the same page on light steel ---------- */
+html[data-theme=light]{
+  --ground:#DFE1E0;--paper:#F6F7F5;--ink:#1E1C18;--muted:#5F5A50;--hair:#C5CBD1;--accent:#7A5C2B;
+  --bore:#DFE1E0;--steel:#F6F7F5;--steel-2:#E6E8E6;--steel-line:#C5CBD1;--chalk:#1E1C18;--chalk-muted:#5F5A50;--gold:#7A5C2B;--nickel:#5F5A50;
+  --plate:linear-gradient(180deg,#F6F7F5 0%,#E9EBE9 100%);--inset:linear-gradient(180deg,#FFFFFF 0%,#F1F2F0 100%);
+  --plate-shadow:inset 0 1px 0 #FFFFFF,0 10px 24px rgba(0,0,0,.10);--inset-shadow:inset 0 1px 0 #FFFFFF,0 1px 3px rgba(0,0,0,.08);
+  --bolt:radial-gradient(circle at 35% 30%,#FFFFFF 0,#C9C6BF 2.9px,#8E8B85 4.2px,rgba(0,0,0,0) 4.5px);
+  color-scheme:light}
+html[data-theme=light] body{background:#DFE1E0}
+html[data-theme=light] body::before{background:#DFE1E0}
+html[data-theme=light] a:hover{color:#1E1C18}
+html[data-theme=light] .top{background:rgba(246,247,245,.86);border-color:rgba(0,0,0,.18);box-shadow:inset 0 1px 0 #FFFFFF,0 12px 30px rgba(0,0,0,.14)}
+html[data-theme=light] .brand .wm{background:linear-gradient(180deg,#5A5D62 0%,#3C3F44 45%,#23252A 55%,#4A4D52 100%);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 1px 0 rgba(255,255,255,.85))}
+html[data-theme=light] .top nav a{color:#1E1C18}
+html[data-theme=light] .top nav a:hover{color:#7A5C2B}
+html[data-theme=light] h1{text-shadow:none}
+html[data-theme=light] .door .hero-wheel{filter:drop-shadow(0 12px 22px rgba(0,0,0,.18))}
+html[data-theme=light] :is(.lede,.plan .ok){color:#1E1C18}
+html[data-theme=light] .pill{border-color:#8A6A35}
+html[data-theme=light] .pill i{background:#A9844C}
+html[data-theme=light] .promise{border-top-color:rgba(0,0,0,.12)}
+html[data-theme=light] :is(.btn-line,.btn-line:hover,.view-btn,.tdeal,.chips label,.social a,.tdot,.tbox-nav button,.tbox-x,.vp-chip,.vp-toggle){background:linear-gradient(180deg,#FFFFFF,#ECEEEC);border-color:#7D7A73;color:#1E1C18;box-shadow:inset 0 1px 0 #FFFFFF,0 1px 2px rgba(0,0,0,.1)}
+html[data-theme=light] :is(.btn-line:hover,.view-btn:hover){border-color:#7A5C2B}
+html[data-theme=light] :is(.tdeal.on,.tdot.on,.vp-chip[aria-pressed=true]){background:linear-gradient(180deg,#E2C07F,#C9A35E);border-color:#8A6A35;color:#121315}
+html[data-theme=light] .vp-toggle[aria-checked=true]{border-color:#7A5C2B;background:linear-gradient(rgba(169,132,76,.14),rgba(169,132,76,.14)),#FFFFFF}
+html[data-theme=light] .btn-gold{border-color:#8A6A35;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 1px 2px rgba(0,0,0,.15)}
+html[data-theme=light] :is(section>.wrap,.close>.wrap){border-color:#C5CBD1}
+html[data-theme=light] :is(.steps li,.box,.rule,details,.demo,.beta,.tstep,.tgroup,.tlook){background:linear-gradient(180deg,#FFFFFF 0%,#F1F2F0 100%);border-color:#C5CBD1;box-shadow:inset 0 1px 0 #FFFFFF,0 1px 3px rgba(0,0,0,.08)}
+html[data-theme=light] :is(.box h3,.rule h3,summary,.tcap h3){text-shadow:none}
+html[data-theme=light] :is(.tcap p,.box ul,.rule p,details p,.boxes p,.tsay,.town p,.tpl-line){color:#1E1C18!important}
+html[data-theme=light] :is(.field label span,.field legend span,.beta .fine,.tgroup li span,.tlegal){color:#5F5A50!important}
+html[data-theme=light] :is(.rule h3,summary::after,.tpl-line b,.tpl-line a,.tq,.tlook figcaption,.tgroup li.hit b::after,.tbox-h b,.vp-sec,.tzicon){color:#7A5C2B}
+html[data-theme=light] :is(.tgroup li b,.town p b,.tbox-h p,.vp-h h2){color:#1E1C18}
+html[data-theme=light] .tgroup li{border-top-color:rgba(0,0,0,.1)}
+html[data-theme=light] .tgroup li.hit{background:rgba(169,132,76,.12);box-shadow:inset 0 0 0 1px rgba(122,92,43,.5)}
+html[data-theme=light] .tlook img,html[data-theme=light] .tbox-img img{box-shadow:0 0 0 1px #C5CBD1}
+html[data-theme=light] .tzicon{background:rgba(246,247,245,.9);box-shadow:0 0 0 1px rgba(122,92,43,.5)}
+html[data-theme=light] :is(.tstep .screen,.hero-shot .frame){box-shadow:0 0 0 1px #C5CBD1,0 12px 30px rgba(0,0,0,.14)}
+html[data-theme=light] .plan{background:linear-gradient(180deg,#FFFFFF,#F1F2F0);border-color:#C5CBD1;box-shadow:inset 0 1px 0 #FFFFFF,0 10px 24px rgba(0,0,0,.10)}
+html[data-theme=light] .plan{color:#1E1C18}
+html[data-theme=light] .advice{background:#FFFFFF;border-color:rgba(122,92,43,.5)}
+html[data-theme=light] .beta :is(input[type=text],input[type=email],textarea){background:#FFFFFF;color:#1E1C18;border-color:#7D7A73;box-shadow:inset 0 1px 2px rgba(0,0,0,.06)}
+html[data-theme=light] .chips input,html[data-theme=light] .consent input{accent-color:#7A5C2B}
+html[data-theme=light] footer{background:#F6F7F5;border-top-color:#C5CBD1;color:#5F5A50}
+html[data-theme=light] .fogband>.wrap{background:#FFFFFF!important;box-shadow:inset 0 1px 0 #FFFFFF,0 10px 24px rgba(0,0,0,.10)!important}
+html[data-theme=light] :is(.tbox-in,.vp-in){background:linear-gradient(180deg,#F6F7F5,#E9EBE9);border-color:#C5CBD1;box-shadow:inset 0 1px 0 #FFFFFF,0 24px 60px rgba(0,0,0,.24)}
+html[data-theme=light] :is(.tbox-h span,.vp-sub,.vp-help){color:#5F5A50}
+html[data-theme=light] :is(.tbox,.vpanel){color:#1E1C18}
+html[data-theme=light] :is(.tbox,.vpanel)::backdrop{background:rgba(223,225,224,.72)}
+html[data-theme=light] .step-media video{background:#E6E8E6}
+
+/* ---------- HIGH CONTRAST: black and white, solid edges, nothing see-through ---------- */
+html[data-theme=contrast]{
+  --ground:#000;--paper:#000;--ink:#FFF;--muted:#E6E6E6;--hair:#FFF;--accent:#D4AF6A;
+  --bore:#000;--steel:#000;--steel-2:#000;--steel-line:#FFF;--chalk:#FFF;--chalk-muted:#E6E6E6;--gold:#D4AF6A;--brass:#D4AF6A;--nickel:#E6E6E6;--sealed:#9FE3CD;
+  --plate:#000;--inset:#000;--plate-shadow:none;--inset-shadow:none;--bolt:linear-gradient(transparent,transparent);--sgold:linear-gradient(#D4AF6A,#D4AF6A);
+  color-scheme:dark}
+html[data-theme=contrast] *,html[data-theme=contrast] *::before,html[data-theme=contrast] *::after{box-shadow:none!important;text-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+html[data-theme=contrast] :is(.hero-wheel,.brand .wm,.btn-gold){filter:none!important}
+html[data-theme=contrast] body,html[data-theme=contrast] body::before{background:#000}
+html[data-theme=contrast] :is(.top,section>.wrap,.close>.wrap,.fogband>.wrap,.steps li,.box,.rule,details,.demo,.beta,.tstep,.tgroup,.tlook,.plan,.advice,.frame,.step-media,.tbox-in,.vp-in,footer){background:#000!important;border:2px solid #FFF!important;color:#FFF!important}
+html[data-theme=contrast] section.bare>.wrap{border:0!important}
+html[data-theme=contrast] :is(.btn-line,.view-btn,.tdeal,.chips label,.social a,.tdot,.tbox-nav button,.tbox-x,.vp-chip,.vp-toggle,.beta input[type=text],.beta input[type=email],.beta textarea){background:#000!important;border:2px solid #FFF!important;color:#FFF!important}
+html[data-theme=contrast] :is(h1,h2,h3,p,li,span,b,strong,summary,label,legend,figcaption,dt,dd,small,em,i,.lede,.intro,.view-line,.gm-points li){color:#FFF!important}
+html[data-theme=contrast] :is(.fine,.gm-note,.tlegal,.vp-help,.vp-sub,.tbox-h span,.field label span,.field legend span,.looks .note,.view-pair figcaption,.tgroup li span){color:#E6E6E6!important}
+html[data-theme=contrast] :is(.eyebrow,.gm-points b,.rule h3,.advice h3,.plan .h,.plan b,.tq,.tag,.promise b,.also b,.tpl-line b,.tlook figcaption,.tbox-h b,.vp-sec,summary::after,.fogband .eyebrow,.fogband .gm-points b){color:#D4AF6A!important}
+html[data-theme=contrast] a{color:#D4AF6A;text-decoration:underline}
+html[data-theme=contrast] :is(.top nav a,.brand,a.btn,a.frame,a.tzoom,.social a){text-decoration:none}
+html[data-theme=contrast] .top nav a{color:#FFF!important}
+html[data-theme=contrast] .brand .wm{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:#FFF}
+html[data-theme=contrast] .pill{background:#000;border:2px solid #D4AF6A;color:#D4AF6A!important}
+html[data-theme=contrast] .pill i{background:#D4AF6A}
+html[data-theme=contrast] :is(.btn-gold,.close .btn-gold,.tdeal.on,.tdot.on,.vp-chip[aria-pressed=true],.plate,.pill.live,.tcap .plate,.step-text .plate){background:#D4AF6A!important;color:#000!important;border:2px solid #FFF!important}
+html[data-theme=contrast] :is(.btn-gold,.plate,.tdeal.on,.vp-chip[aria-pressed=true]) *{color:#000!important}
+html[data-theme=contrast] .vp-toggle[aria-checked=true]{border-color:#D4AF6A!important;color:#D4AF6A!important}
+html[data-theme=contrast] .pill-sealed{background:#000!important;border:2px solid #9FE3CD!important;color:#9FE3CD!important}
+html[data-theme=contrast] .pill-steel{background:#000!important;border:2px solid #FFF!important;color:#FFF!important}
+html[data-theme=contrast] .tgroup li{border-top:1px solid #FFF}
+html[data-theme=contrast] .tgroup li.hit{background:#000;outline:2px solid #D4AF6A;outline-offset:-2px}
+html[data-theme=contrast] .tzicon{background:#000;color:#D4AF6A;border:2px solid #D4AF6A}
+html[data-theme=contrast] :is(.tbox,.vpanel)::backdrop{background:#000}
+html[data-theme=contrast] .chips input,html[data-theme=contrast] .consent input{accent-color:#D4AF6A}
+html[data-theme=contrast] ::selection{background:#FFF;color:#000}
+html[data-theme=contrast] :focus-visible,html[data-theme=contrast] :is(input,textarea):focus{outline:3px solid #FFF06A!important;outline-offset:2px!important;box-shadow:0 0 0 2px #000!important}
+html[data-theme=contrast] .skip:focus{background:#FFF06A;color:#000}
+html[data-theme=contrast] .tbox-in,html[data-theme=contrast] .vp-in{background:#000!important}
+
+/* ---------- CALM MODE (with any look): flat and still ---------- */
+html[data-calm]{scroll-behavior:auto}
+html[data-calm] body::before{background-image:none}
+html[data-calm] *,html[data-calm] *::before,html[data-calm] *::after{animation:none!important;transition:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+html[data-calm] :is(section:not(.fogband)>.wrap,.close>.wrap){background:var(--plate)!important;box-shadow:none!important}
+html[data-calm]:not([data-theme]) :is(section:not(.fogband)>.wrap,.close>.wrap){background:#1B1D20!important}
+html[data-calm]:not([data-theme]) :is(.box,.rule,details,.beta,.tstep,.tgroup,.tlook,.tbox-in,.vp-in){background:#2B2E32!important;box-shadow:none!important}
+html[data-calm]:not([data-theme]) .top{background:#1B1D20;box-shadow:none}
+html[data-calm][data-theme=light] :is(section:not(.fogband)>.wrap,.close>.wrap){background:#F6F7F5!important}
+html[data-calm][data-theme=light] :is(.box,.rule,details,.beta,.tstep,.tgroup,.tlook,.tbox-in,.vp-in,.plan){background:#FFFFFF!important;box-shadow:none!important}
+html[data-calm][data-theme=light] .top{background:#F6F7F5;box-shadow:none}
+html[data-calm] :is(.hero-wheel,.brand .wm,.hero-shot .frame,.tstep .screen,h1){filter:none!important;box-shadow:none!important;text-shadow:none!important}
+html[data-calm] .tlook a.tzoom:hover img{transform:none}
+html[data-calm] .section-bare{background:none}
+
+/* ---------- DYSLEXIA-FRIENDLY FONT (with any look) ---------- */
+html[data-dys] body,html[data-dys] :is(h1,h2,h3,p,li,a,button,summary,label,legend,input,textarea,figcaption,span,b,.eyebrow,.pill,.plate,.tdot,.tq,.gm-points b,.gm-note,.view-pair figcaption,.tbox-h b,.vp-sec,.vp-h h2,.rule h3,.advice h3,.plan,.plan .h,.tlook figcaption){font-family:"OpenDyslexic",var(--sans)!important;letter-spacing:.05em!important;word-spacing:.16em}
+html[data-dys] .brand .wm{font-family:var(--display)!important;letter-spacing:.18em!important;word-spacing:normal}
+html[data-dys] body{line-height:1.75}
+html[data-dys] .brand .wm{white-space:nowrap}
+html[data-dys] .top nav{gap:16px}
+@media (max-width:1100px){html[data-dys] .top nav a:not(:last-child){display:none}}
+html[data-dys] .top nav a{font-size:13px;letter-spacing:0!important;word-spacing:.05em;white-space:nowrap}
+html[data-dys] :is(h1,h2,h3,summary,.vp-h h2){letter-spacing:.02em!important;word-spacing:.1em}
+html[data-dys] :is(h1,h2){line-height:1.2!important}
+html[data-dys] h1{font-size:clamp(30px,3.8vw,48px)!important}
+html[data-dys] h2{font-size:clamp(28px,3.4vw,40px)!important}
+html[data-dys] :is(.tcap h3,.step-text h3,.shots-h h3,.tlooks-h,.work h3){font-size:clamp(24px,2.4vw,32px)!important;line-height:1.25!important}
 </style>
 </head>
 <body>
@@ -705,6 +853,7 @@ section.bare>.wrap{background:none!important;border:0!important;box-shadow:none!
         <svg class="logo" viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="wBR" gradientUnits="userSpaceOnUse" x1="14" y1="10" x2="106" y2="110"><stop offset="0" stop-color="#D9D6CF"/><stop offset=".5" stop-color="#A3A09A"/><stop offset="1" stop-color="#55524D"/></linearGradient><linearGradient id="wBI" gradientUnits="userSpaceOnUse" x1="106" y1="110" x2="14" y2="10"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".35"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity=".45"/></linearGradient><linearGradient id="wBS" gradientUnits="userSpaceOnUse" x1="20" y1="20" x2="100" y2="100"><stop offset="0" stop-color="#D9D6CF"/><stop offset=".5" stop-color="#9C9993"/><stop offset="1" stop-color="#55524D"/></linearGradient><radialGradient id="wBH" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#E2C688"/><stop offset=".6" stop-color="#C49E5C"/><stop offset="1" stop-color="#8A6A35"/></radialGradient><filter id="wBD" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.6" stdDeviation="1.4" flood-color="#000" flood-opacity="0.6"/></filter></defs><g filter="url(#wBD)"><circle cx="60" cy="60" r="53" fill="none" stroke="url(#wBR)" stroke-width="6"/><circle cx="60" cy="60" r="56.2" fill="none" stroke="#0B0C0D" stroke-width="0.8" opacity=".8"/><circle cx="60" cy="60" r="49.6" fill="none" stroke="url(#wBI)" stroke-width="1"/><g class="turn"><g stroke="url(#wBS)" stroke-width="7.5" stroke-linecap="round"><line x1="60" y1="60" x2="60" y2="19" transform="rotate(0 60 60)"/><line x1="60" y1="60" x2="60" y2="19" transform="rotate(90 60 60)"/><line x1="60" y1="60" x2="60" y2="19" transform="rotate(180 60 60)"/><line x1="60" y1="60" x2="60" y2="19" transform="rotate(270 60 60)"/></g><g stroke="#FFFFFF" stroke-opacity=".3" stroke-width="1.2" stroke-linecap="round"><line x1="58.4" y1="48" x2="58.4" y2="21" transform="rotate(0 60 60)"/><line x1="58.4" y1="48" x2="58.4" y2="21" transform="rotate(90 60 60)"/><line x1="58.4" y1="48" x2="58.4" y2="21" transform="rotate(180 60 60)"/><line x1="58.4" y1="48" x2="58.4" y2="21" transform="rotate(270 60 60)"/></g><circle cx="60" cy="60" r="11.5" fill="url(#wBH)" stroke="#5E4520" stroke-width="1"/><circle cx="60" cy="60" r="9.8" fill="none" stroke="#F3DCA4" stroke-opacity=".35" stroke-width="0.7"/></g></g></svg>
         <span class="wm">VAULT CLERK</span>
       </a>
+      <div class="top-r">
       <nav aria-label="Page sections">
         <a href="#how">How it works</a>
         <a href="#directory">Directory</a>
@@ -713,6 +862,8 @@ section.bare>.wrap{background:none!important;border:0!important;box-shadow:none!
         <a href="#faq">FAQ</a>
         <a href="#beta">Join the beta</a>
       </nav>
+      <button type="button" class="view-btn" id="view-btn" aria-haspopup="dialog" aria-controls="view-panel">View</button>
+      </div>
     </div>
 
     <div class="hero-grid">
@@ -977,7 +1128,7 @@ section.bare>.wrap{background:none!important;border:0!important;box-shadow:none!
       <details><summary>Are Directory listings paid for?</summary><p>No. Nobody pays to be listed, and we don't earn from anything in the Directory.</p></details>
       <details><summary>Where do the Directory listings come from?</summary><p>From each venue's or organisation's own website. Every listing shows the date we checked it, and the list is updated with each app release.</p></details>
       <details><summary>Which computers does Vault Clerk run on?</summary><p>macOS 10.15 or later on Apple Silicon and Intel Macs, and Windows 10 and 11 (64-bit), in beta.</p></details>
-      <details><summary>Can I change how it looks?</summary><p>Yes. The View button in the sidebar switches between Dark, Light and High contrast, and turns on Calm mode or a dyslexia-friendly font. It changes only how the app looks, never your files.</p></details>
+      <details><summary>Can I change how it looks?</summary><p>Yes. The View button in the sidebar switches between Dark, Light and High contrast, and turns on Calm mode or a dyslexia-friendly font. It changes only how the app looks, never your files. This website has the same View button at the top of the page.</p></details>
       <details><summary>How do I get Vault Clerk?</summary><p>Vault Clerk is in an early beta. <a href="#beta">Apply for the beta</a> and we invite people in small groups; the download link is emailed to invited testers only. Beta testers get a free licence at launch. The app will be licensed to you, for good, and prices haven't been set yet.</p></details>
       <details><summary>Who makes Vault Clerk?</summary><p>Vault Clerk is made by <a href="https://cravingsofa.com/">Craving Sofa Entertainment</a>, the independent music house that also makes <a href="https://genrematch.app/">GenreMatch</a>. Follow along on X at <a href="https://x.com/VaultClerkApp" target="_blank" rel="noopener">@VaultClerkApp</a> and Instagram at <a href="https://www.instagram.com/vaultclerk/" target="_blank" rel="noopener">@VaultClerk</a>.</p></details>
     </div>
@@ -1076,12 +1227,47 @@ dots.forEach(function(d,k){d.addEventListener('click',function(){go(k)})});
 t.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){e.preventDefault();go(cur-1)}if(e.key==='ArrowRight'){e.preventDefault();go(cur+1)}});
 var tm;t.addEventListener('scroll',function(){clearTimeout(tm);tm=setTimeout(function(){var i=Math.round(t.scrollLeft/t.clientWidth);if(i!==cur&&f[i])mark(i)},80)},{passive:true});})();
 </script>
+<dialog id="view-panel" class="vpanel" aria-labelledby="vp-title">
+  <div class="vp-in">
+    <div class="vp-h"><h2 id="vp-title">View</h2><button type="button" class="tbox-x" id="vp-close" aria-label="Close View">&#10005;</button></div>
+    <p class="vp-sub">Pick the look that&#39;s easiest on your eyes. It&#39;s remembered in this browser only.</p>
+    <h3 class="vp-sec" id="vp-look">Look</h3>
+    <div class="vp-chips" role="group" aria-labelledby="vp-look">
+      <button type="button" class="vp-chip" data-set-theme="dark" aria-pressed="true">Dark</button>
+      <button type="button" class="vp-chip" data-set-theme="light" aria-pressed="false">Light</button>
+      <button type="button" class="vp-chip" data-set-theme="contrast" aria-pressed="false">High contrast</button>
+    </div>
+    <button type="button" class="vp-toggle" id="vp-calm" role="switch" aria-checked="false" aria-describedby="vp-calm-h">Calm mode: Off</button>
+    <p class="vp-help" id="vp-calm-h">Flat and still: no textures, glass or moving pictures. The videos wait until you press play.</p>
+    <button type="button" class="vp-toggle" id="vp-dys" role="switch" aria-checked="false" aria-describedby="vp-dys-h">Dyslexia-friendly font: Off</button>
+    <p class="vp-help" id="vp-dys-h">OpenDyslexic, with extra space between letters and words.</p>
+  </div>
+</dialog>
+<script>
+(function(){var h=document.documentElement,d=document.getElementById('view-panel'),b=document.getElementById('view-btn');if(!d||!b)return;
+function get(){return{theme:h.getAttribute('data-theme')||'dark',calm:h.hasAttribute('data-calm'),dys:h.hasAttribute('data-dys')}}
+function save(v){try{localStorage.setItem('vc-view',JSON.stringify(v))}catch(e){}}
+function paint(){var v=get();[].forEach.call(d.querySelectorAll('.vp-chip'),function(c){c.setAttribute('aria-pressed',String(c.getAttribute('data-set-theme')===v.theme))});
+[['vp-calm','Calm mode',v.calm],['vp-dys','Dyslexia-friendly font',v.dys]].forEach(function(x){var e=document.getElementById(x[0]);e.setAttribute('aria-checked',String(x[2]));e.textContent=x[1]+': '+(x[2]?'On':'Off')})}
+function set(k,val){var v=get();v[k]=val;if(v.theme==='dark')h.removeAttribute('data-theme');else h.setAttribute('data-theme',v.theme);
+['calm','dys'].forEach(function(n){if(v[n])h.setAttribute('data-'+n,'');else h.removeAttribute('data-'+n)});
+if(v.calm)[].forEach.call(document.querySelectorAll('.step-media video'),function(x){x.pause()});
+save(v);paint()}
+[].forEach.call(d.querySelectorAll('.vp-chip'),function(c){c.addEventListener('click',function(){set('theme',c.getAttribute('data-set-theme'))})});
+document.getElementById('vp-calm').addEventListener('click',function(){set('calm',!get().calm)});
+document.getElementById('vp-dys').addEventListener('click',function(){set('dys',!get().dys)});
+b.addEventListener('click',function(){paint();d.showModal()});
+document.getElementById('vp-close').addEventListener('click',function(){d.close()});
+d.addEventListener('click',function(e){if(e.target===d)d.close()});
+d.addEventListener('close',function(){b.focus()});})();
+</script>
 <script>
 (function(){var v=[].slice.call(document.querySelectorAll('.step-media video'));if(!v.length)return;
 var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(still||!('IntersectionObserver' in window))return;
 v.forEach(function(x){x.muted=true;x.loop=true;x.setAttribute('muted','');x.setAttribute('loop','')});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){var x=e.target;
+if(document.documentElement.hasAttribute('data-calm'))return;
 if(e.isIntersecting&&e.intersectionRatio>=.5){if(x.preload!=='auto')x.preload='auto';var p=x.play();if(p&&p.catch)p.catch(function(){})}else if(!x.paused){x.pause()}})},{threshold:[0,.5]});
 v.forEach(function(x){io.observe(x)});})();
 </script>
