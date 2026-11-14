@@ -1294,8 +1294,8 @@ var tm;t.addEventListener('scroll',function(){clearTimeout(tm);tm=setTimeout(fun
 (function(){var h=document.documentElement,d=document.getElementById('view-panel'),b=document.getElementById('view-btn');if(!d||!b)return;
 function get(){return{theme:h.getAttribute('data-theme')||'dark',calm:h.hasAttribute('data-calm'),dys:h.hasAttribute('data-dys')}}
 function save(v){try{localStorage.setItem('vc-view',JSON.stringify(v))}catch(e){}}
-var MEDIA=['vc-request-read','vc-request-fill-in','vc-request-tracks','vc-directory-venues','vc-directory-sync','vc-genrematch-read','vc-your-sound','vc-calendar-month','vc-calendar-release','vc-linkinbio-builder','vc-linkinbio-desktop'];
-var RX=/\/screens\/(vc-[a-z-]+?)(?:--(?:light|contrast))?-(720|1440)\.webp/g;
+var MEDIA=['vc-request-read','vc-request-fill-in','vc-request-tracks','vc-directory-venues','vc-directory-sync','vc-genrematch-read','vc-your-sound','vc-calendar-month','vc-calendar-release','vc-linkinbio-builder','vc-linkinbio-desktop','vc-tours-map','vc-tours-routing','vc-tours-card','vc-tours-card-papers'];
+var RX=/\/screens\/(vc-[a-z-]+?)(?:--(?:light|contrast))?-(360|720|1440)\.webp/g;
 function swapUrl(u,sfx){return u.replace(RX,function(m,n,w){return MEDIA.indexOf(n)<0?m:'/screens/'+n+sfx+'-'+w+'.webp'})}
 function media(){var t=h.getAttribute('data-theme'),sfx=(t==='light'||t==='contrast')?'--'+t:'';
 [].forEach.call(document.querySelectorAll('img[src^="/screens/"]'),function(i){if(i.closest('#view'))return;
