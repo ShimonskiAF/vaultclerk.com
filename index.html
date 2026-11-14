@@ -91,7 +91,8 @@ if(t==='light'||t==='contrast')h.setAttribute('data-theme',t);if(v.calm)h.setAtt
         "Identity and tax drawer is walled off and never sent to any AI; any AI is optional and runs on your computer",
         "Calendar: reads agreements, invoices and licences on your computer for dates (show times, payment due dates, renewals, licence start and end) and suggests them; nothing is added until you say yes; a release plan counted back from release day",
         "Link in bio: a one-page artist page built from your vault (release, playable tracks, shows, press kit, songs clear for sync, links), previewed on phone and desktop, with a list of every file that would go online before you publish at share.vaultclerk.com; pause or unpublish any time; DARK projects never appear",
-        "View settings: Dark, Light and High contrast themes, Calm mode and a dyslexia-friendly font (OpenDyslexic)"
+        "View settings: Dark, Light and High contrast themes, Calm mode and a dyslexia-friendly font (OpenDyslexic)",
+        "Tours (inside the Calendar): plan a run of shows in one region on a map, with numbered pins in date order, a home-base ring, a card for every show (date, venue, set time, fee or deal, contact, status, linked agreement, rider and stage plot), distance and estimated drive time between stops, a shorter order for the same dates when there is one, radius-clause checks read from linked agreements on your computer, and Directions buttons for Apple Maps, Google Maps and Waze; a basic map works offline"
       ],
       "sameAs": [
         "https://x.com/VaultClerkApp",
@@ -267,6 +268,14 @@ if(t==='light'||t==='contrast')h.setAttribute('data-theme',t);if(v.calm)h.setAtt
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Yes. The View button in the sidebar switches between Dark, Light and High contrast, and turns on Calm mode or a dyslexia-friendly font. It changes only how the app looks, never your files. This website has the same View button at the top of the page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the tour map work offline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, a basic map comes with the app. The detailed street map and address search use the internet, and only when you switch them on. Your tours stay on your computer."
           }
         },
         {
@@ -843,6 +852,13 @@ html[data-dys] :is(h1,h2){line-height:1.2!important}
 html[data-dys] h1{font-size:clamp(30px,3.8vw,48px)!important}
 html[data-dys] h2{font-size:clamp(28px,3.4vw,40px)!important}
 html[data-dys] :is(.tcap h3,.step-text h3,.shots-h h3,.tlooks-h,.work h3){font-size:clamp(24px,2.4vw,32px)!important;line-height:1.25!important}
+.gm-grid.flip{grid-template-columns:minmax(0,400fr) minmax(0,820fr)}
+.gm-grid.flip .gm-media{order:2}
+.tours-pair{display:grid;grid-template-columns:minmax(0,3.09fr) minmax(0,1fr);gap:16px;align-items:start}
+#tours>.wrap{max-width:1360px}
+#tours .view-line{margin:0 0 16px;color:var(--chalk)}
+#tours .gm-note{margin:0}
+@media (max-width:760px){.gm-grid.flip{grid-template-columns:1fr}.tours-pair{display:none}}
 </style>
 </head>
 <body>
@@ -1051,13 +1067,41 @@ html[data-dys] :is(.tcap h3,.step-text h3,.shots-h h3,.tlooks-h,.work h3){font-s
         <div class="gm-text">
           <p class="eyebrow">CALENDAR</p>
           <h2 id="calendar-title">Every date, read from your paperwork.</h2>
-          <p class="intro">Vault Clerk reads your agreements, invoices and licences for the dates that matter and suggests them for your calendar. Nothing is added until you say yes.</p>
+          <p class="intro">Vault Clerk reads your agreements, invoices and licences for the dates that matter and suggests them for your calendar. Nothing is added until you say yes. Plan tours in it too (see below).</p>
           <ul class="gm-points">
             <li><b>Found in your files</b>Show times from a performance agreement, payment due dates from an invoice, renewals, and the start and end of a licence. Each one shows the file it came from.</li>
             <li><b>A release plan</b>Pick a release day and the plan counts back: masters, split sheet, PRO registration, upload and share links, each with a date you can move. Steps others are waiting on are marked.</li>
             <li><b>Find any date</b>Month view and a day-by-day list, search, and jump to any date, past or upcoming.</li>
           </ul>
           <p class="gm-note">Dates read from a contract are suggestions; check them against the document. Not legal or financial advice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tours" aria-labelledby="tours-title">
+    <div class="wrap">
+      <div class="gm-grid flip">
+        <div class="gm-media">
+          <a href="/screens/vc-tours-map-1440.webp" class="tzoom frame" data-group="tours" data-title="Tours" data-sub="A run of shows on the map, with routing help." aria-label="Open the Tours screenshot full size"><img src="/screens/vc-tours-map-720.webp" srcset="/screens/vc-tours-map-720.webp 720w, /screens/vc-tours-map-1440.webp 1440w" sizes="(max-width:760px) 92vw, (max-width:1100px) 60vw, 820px" width="1440" height="900" loading="lazy" decoding="async" alt="Vault Clerk's Tours view: five shows on a map of Australia's east coast, joined in date order, with a ring around home base."></a>
+          <div class="tours-pair">
+            <a href="/screens/vc-tours-routing-1440.webp" class="tzoom frame" data-group="tours" data-title="Routing help" data-sub="Stops in date order, with distance and drive time between them." aria-label="Open the Routing help screenshot full size"><img src="/screens/vc-tours-routing-720.webp" srcset="/screens/vc-tours-routing-720.webp 720w, /screens/vc-tours-routing-1440.webp 1440w" sizes="(max-width:760px) 70vw, 620px" width="1440" height="900" loading="lazy" decoding="async" alt="Vault Clerk's Tours view with the stops listed in date order, the distance and estimated drive time between them, and shows outside the home ring marked."></a>
+            <a href="/screens/vc-tours-card-papers-720.webp" class="tzoom frame" data-group="tours" data-title="A show&#39;s papers" data-sub="The linked agreement, rider and stage plot, and the radius clause read from the agreement." aria-label="Open the A show&#39;s papers screenshot full size"><img src="/screens/vc-tours-card-papers-360.webp" srcset="/screens/vc-tours-card-papers-360.webp 360w, /screens/vc-tours-card-papers-720.webp 720w" sizes="(max-width:760px) 24vw, 200px" width="720" height="1389" loading="lazy" decoding="async" alt="A show card in Vault Clerk's Tours with its performance agreement linked and the radius clause it read from that agreement."></a>
+          </div>
+          <a hidden href="/screens/vc-tours-card-1440.webp" class="tzoom" data-group="tours" data-title="A card for every show" data-sub="Date, status, venue, times, deal and contact."><img src="/screens/vc-tours-card-720.webp" width="1440" height="900" loading="lazy" decoding="async" alt="A show card open beside the tour map in Vault Clerk, with the date, status, venue, set time, load-in, deal, capacity and contact."></a>
+        </div>
+        <div class="gm-text">
+          <p class="eyebrow">TOURS</p>
+          <h2 id="tours-title">Plan the run, region by region.</h2>
+          <p class="intro">Booking your own shows? Plan a tour as a run of dates in one region, on a map, before you spend a cent on petrol. Every show you save lands in your Calendar and on your Link in bio page.</p>
+          <ul class="gm-points">
+            <li><b>On the map</b>Numbered pins in date order, joined by a line. Add a venue from your Directory or your contacts, or drop a pin anywhere. A home base draws a ring, so you can see which shows are a long way from home. Shows outside it are marked, never blocked.</li>
+            <li><b>A card for every show</b>Date, venue, set time, fee or deal, contact, notes and status: Hold, Confirmed or Settled. Link the show&#39;s performance agreement, rider and stage plot from your vault, or make one from Kits; they&#39;re linked, never copied.</li>
+            <li><b>Routing help</b>Distance and drive time between stops, a note when the route zigzags or a drive is tight, and a shorter order for the same dates if there is one. Only holds move; confirmed shows keep their dates.</li>
+            <li><b>Radius clauses</b>If a linked agreement says no other shows nearby for a while, Tours reads that clause on your computer and flags any show that clashes. You can type the numbers yourself too.</li>
+          </ul>
+          <p class="view-line">Each show has Directions buttons for Apple Maps, Google Maps and Waze, and a whole tour opens as one Google Maps route.</p>
+          <p class="gm-note">Drive times are estimates, not real routes. A basic map comes with the app and works offline; the detailed map and address search use the internet, only when you switch them on, and Directions sends only that show&#39;s address, only when you press it. Check your agreement. Not legal advice.</p>
         </div>
       </div>
     </div>
@@ -1131,6 +1175,7 @@ html[data-dys] :is(.tcap h3,.step-text h3,.shots-h h3,.tlooks-h,.work h3){font-s
       <details><summary>Where do the Directory listings come from?</summary><p>From each venue's or organisation's own website. Every listing shows the date we checked it, and the list is updated with each app release.</p></details>
       <details><summary>Which computers does Vault Clerk run on?</summary><p>macOS 10.15 or later on Apple Silicon and Intel Macs, and Windows 10 and 11 (64-bit), in beta.</p></details>
       <details><summary>Can I change how it looks?</summary><p>Yes. The View button in the sidebar switches between Dark, Light and High contrast, and turns on Calm mode or a dyslexia-friendly font. It changes only how the app looks, never your files. This website has the same View button at the top of the page.</p></details>
+      <details><summary>Does the tour map work offline?</summary><p>Yes, a basic map comes with the app. The detailed street map and address search use the internet, and only when you switch them on. Your tours stay on your computer.</p></details>
       <details><summary>How do I get Vault Clerk?</summary><p>Vault Clerk is in an early beta. <a href="#beta">Apply for the beta</a> and we invite people in small groups; the download link is emailed to invited testers only. Beta testers get a free licence at launch. The app will be licensed to you, for good, and prices haven't been set yet.</p></details>
       <details><summary>Who makes Vault Clerk?</summary><p>Vault Clerk is made by <a href="https://cravingsofa.com/">Craving Sofa Entertainment</a>, the independent music house that also makes <a href="https://genrematch.app/">GenreMatch</a>. Follow along on X at <a href="https://x.com/VaultClerkApp" target="_blank" rel="noopener">@VaultClerkApp</a> and Instagram at <a href="https://www.instagram.com/vaultclerk/" target="_blank" rel="noopener">@VaultClerk</a>.</p></details>
     </div>
